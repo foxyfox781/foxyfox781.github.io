@@ -1,18 +1,62 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Univerbeta</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+    }
+
+    /* HEADER */
+    header {
+      height: 90px;               /* taille du header */
+      background: #000;           /* noir */
+      display: flex;
+      align-items: center;        /* centre verticalement */
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    /* LOGO */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .logo img {
+      max-height: 70px;           /* taille du logo */
+      width: auto;
+    }
+
+    .logo span {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+  </style>
 </head>
 <body>
 
-  <header class="topbar">
-    <img src="https://cdn.discordapp.com/attachments/1183530114886139914/1401582227586027591/Mon_projet-1.png?ex=6970ebab&is=696f9a2b&hm=d1d1e900afe6fabb44d59bb35e67add7fd9131de35e6177cc3a6742e38523c77&" alt="Chill Vibes" class="logo">
+  <!-- HEADER -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Logo Univerbeta">
+      <span>Univerbeta</span>
+    </a>
   </header>
 
+  <!-- CONTENU -->
   <main>
-    <h1>Bienvenue sur Chill Vibes</h1>
+    <h1>Bienvenue sur Univerbeta</h1>
+    <p>Ton site est maintenant plus propre, plus grand, et le logo ramène à l’accueil.</p>
   </main>
 
 </body>
