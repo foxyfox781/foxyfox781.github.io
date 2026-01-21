@@ -42,7 +42,8 @@
       letter-spacing: 1px;
     }
     
-    * {
+       /* Truc Apple */
+    {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -113,46 +114,70 @@
   height: auto;
 }
 
-.footer {
-  background: #000;
-  color: #fff;
-  padding: 80px 20px;
+   /* Pied de page */
+  
+.mobile-footer {
+  background: #fff;
+  color: #111;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-.footer-container {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
+.mobile-footer details {
+  border-top: 1px solid #e5e5e5;
+  padding: 18px 16px;
 }
 
-.footer-column h3 {
-  font-size: 22px;
-  font-weight: 500;
-  margin-bottom: 24px;
-}
-
-.footer-column a {
-  display: block;
-  color: #bfbfbf;
-  text-decoration: none;
-  margin-bottom: 16px;
+.mobile-footer summary {
+  list-style: none;
   font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
 }
 
-.footer-column a:hover {
-  color: #fff;
+.mobile-footer summary::-webkit-details-marker {
+  display: none;
 }
 
-/* Desktop */
-@media (min-width: 768px) {
-  .footer-container {
-    flex-direction: row;
-    gap: 120px;
-  }
+.mobile-footer summary::after {
+  content: "⌄";
+  position: absolute;
+  right: 0;
+  font-size: 18px;
+  transition: transform 0.2s;
 }
-  </style>
+
+details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.mobile-footer a {
+  display: block;
+  margin-top: 14px;
+  font-size: 15px;
+  color: #6e6e6e;
+  text-decoration: none;
+}
+
+.footer-country {
+  border-top: 1px solid #e5e5e5;
+  padding: 16px;
+  font-size: 15px;
+  color: #6e6e6e;
+}
+
+.footer-bottom {
+  border-top: 1px solid #e5e5e5;
+  padding: 16px;
+  font-size: 13px;
+  color: #6e6e6e;
+}
+
+.footer-bottom p {
+  margin-bottom: 12px;
+}
+/*/////////////////////*/
+</style>
 </head>
 <body>
 
@@ -178,28 +203,53 @@
     </div>
   </section>
 
-<footer class="footer">
-  <div class="footer-container">
+<footer class="mobile-footer">
 
-    <div class="footer-column">
-      <h3>Univerbeta</h3>
-      <a href="#">Accédez au centre d'aide</a>
-    </div>
+  <details>
+    <summary>Ressources</summary>
+    <a href="#">Cartes cadeaux</a>
+    <a href="#">Trouver un magasin</a>
+  </details>
 
-    <div class="footer-column">
-      <h3>En savoir plus</h3>
-      <a href="#">À propos</a>
-      <a href="#">Nos services</a>
-    </div>
-    
-      <div class="footer-column">
-      <h3>Créations</h3>
-      <a href="#">Chill Vibes</a>
-      <a href="#">Femboy Vibes</a>
-    </div>
+  <details>
+    <summary>Aide</summary>
+    <a href="#">Centre d’aide</a>
+    <a href="#">Livraison</a>
+    <a href="#">Retours</a>
+  </details>
 
+  <details>
+    <summary>Entreprise</summary>
+    <a href="#">À propos</a>
+    <a href="#">Carrières</a>
+    <a href="#">Investisseurs</a>
+  </details>
+
+  <details>
+    <summary>Promotions liées à la communauté</summary>
+    <a href="#">Étudiants</a>
+    <a href="#">Militaires</a>
+  </details>
+
+  <div class="footer-country">
+    🌍 France
   </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Nike, Inc. Tous droits réservés</p>
+
+    <details>
+      <summary>Guides</summary>
+      <a href="#">Conditions d'utilisation</a>
+      <a href="#">Conditions générales de vente</a>
+      <a href="#">Informations sur l'entreprise</a>
+      <a href="#">Politique de confidentialité et de gestion des cookies</a>
+      <a href="#">Paramètres de confidentialité et des cookies</a>
+    </details>
+  </div>
+
 </footer>
+
 
 </body>
 </html>
