@@ -112,6 +112,46 @@
   max-width: 100%;
   height: auto;
 }
+
+.footer {
+  background: #000;
+  color: #fff;
+  padding: 80px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.footer-column h3 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.footer-column a {
+  display: block;
+  color: #bfbfbf;
+  text-decoration: none;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.footer-column a:hover {
+  color: #fff;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    gap: 120px;
+  }
+}
   </style>
 </head>
 <body>
@@ -124,11 +164,7 @@
   </header>
 
   <!-- CONTENU -->
-<section class="hero">
-    <p>Le site n'est pas fini.</p>
-  </section>
-  
-    <section class="hero">
+ <section class="hero">
     <h1>Chill Vibes</h1>
     <p>Découvrez le discord de Univerbeta</p>
 
@@ -141,6 +177,30 @@
       <img src="https://cdn.discordapp.com/attachments/1183530114886139914/1463554866407276649/IMG_1615.png?ex=6972412f&is=6970efaf&hm=0ef438c6cd65b037999711f0851c16cafe73886e24eb16590a1898a99cd38a21&" alt="Chill Vibes">
     </div>
   </section>
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-column">
+      <h3>Uber</h3>
+      <a href="#">Accédez au centre d'aide</a>
+      <a href="#">Fonctionnement des applications et des sites Web Uber et Uber Eats</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Entreprise</h3>
+      <a href="#">À propos</a>
+      <a href="#">Nos services</a>
+      <a href="#">Espace presse</a>
+      <a href="#">Investisseurs</a>
+      <a href="#">Blog</a>
+      <a href="#">Offres d'emploi</a>
+      <a href="#">Uber AI</a>
+      <a href="#">Uber One</a>
+    </div>
+
+  </div>
+</footer>
 
 </body>
 </html>
