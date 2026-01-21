@@ -68,19 +68,69 @@
       width: fit-content;
     }
 
-    .footer {
-      text-align: center;
-      padding: 30px 0;
-      color: #888;
-      border-top: 1px solid #333;
-    }
+/* Pied de page */
+  
+.mobile-footer {
+  background: #000;
+  color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
 
-    a {
-      color: #fff;
-      text-decoration: none;
-      border-bottom: 1px solid #fff;
-    }
-  </style>
+.mobile-footer details {
+  border-top: 1px solid #e5e5e5;
+  padding: 18px 16px;
+}
+
+.mobile-footer summary {
+  list-style: none;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+
+.mobile-footer summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-footer summary::after {
+  content: "⌄";
+  position: absolute;
+  right: 0;
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+
+details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.mobile-footer a {
+  display: block;
+  margin-top: 14px;
+  font-size: 15px;
+  color: #6e6e6e;
+  text-decoration: none;
+}
+
+.footer-country {
+  border-top: 1px solid #e5e5e5;
+  padding: 16px;
+  font-size: 15px;
+  color: #6e6e6e;
+}
+
+.footer-bottom {
+  border-top: 1px solid #e5e5e5;
+  padding: 16px;
+  font-size: 13px;
+  color: #6e6e6e;
+}
+
+.footer-bottom p {
+  margin-bottom: 12px;
+}
+</style>
 </head>
 
 <body>
@@ -97,9 +147,7 @@
     <h2>Liens vers documents juridiques</h2>
     <div class="links">
       <a href="terms.html">Conditions d’utilisation</a>
-      <a href="cgv.html">Conditions générales de vente</a>
       <a href="privacy.html">Politique de confidentialité</a>
-      <a href="cookies.html">Politique de cookies</a>
       <a href="contact.html">Contact support</a>
     </div>
 
@@ -116,9 +164,37 @@
       Toute reproduction, modification ou distribution sans autorisation est interdite.
     </p>
 
-    <div class="footer">
-      © 2026 Univerbeta - Tous droits réservés
-    </div>
+  <footer class="mobile-footer">
+
+  <details>
+    <summary>Créations</summary>
+    <a href="#">Chill Vibes</a>
+    <a href="#">Femboy Vibes</a>
+  </details>
+
+  <details>
+    <summary>Aide</summary>
+    <a href="#">Centre d’aide</a>
+  </details>
+
+  <details>
+    <summary>Univerbeta</summary>
+    <a href="#">À propos</a>
+  </details>
+
+
+  <div class="footer-country">
+    France
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Univerbeta. Tous droits réservés</p>
+
+    <details>
+        <summary>Guide</summary>
+      <a href="terms">Conditions d'utilisation</a>
+      <a href="#">Informations sur Univerbeta</a>
+    </details>
   </div>
 </body>
 </html>
