@@ -34,32 +34,23 @@
 
     /* HEADER */
     header {
-      height: 70px;               /* taille du header */
-      background: #000;           /* noir */
-      display: flex;
-      align-items: center;        /* centre verticalement */
-      padding: 0 20px;
-      box-sizing: border-box;
-    }
-
-    /* LOGO */
-    .logo {
+      height: 70px;
       display: flex;
       align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: #fff;
+      padding: 0 30px;
+      border-bottom: 1px solid #000;
     }
 
     .logo img {
-      max-height: 70px;           /* taille du logo */
-      width: auto;
+      height: 40px;
     }
 
-    .logo span {
-      font-size: 20px;
-      font-weight: bold;
-      letter-spacing: 1px;
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      border: 1px solid #000;
+      background: #0f0f0f;
     }
     
        /* Truc Apple */
@@ -178,9 +169,9 @@
 <body>
 
   <!-- HEADER -->
-  <header>
+    <header>
     <a href="index.html" class="logo">
-      <img src="https://cdn.discordapp.com/attachments/1065392816798310561/1463833892854169642/Logo_Univerbeta_.png?ex=6973450c&is=6971f38c&hm=8554179c0443defc0a9e848cbca99715b54310861ce56a82989f263ac7005af3&" alt="Logo Univerbeta">
+      <img src="https://cdn.discordapp.com/attachments/1065392816798310561/1463833892854169642/Logo_Univerbeta_.png?ex=6973450c&is=6971f38c&hm=8554179c0443defc0a9e848cbca99715b54310861ce56a82989f263ac7005af3&" alt="Univerbeta">
     </a>
   </header>
 
