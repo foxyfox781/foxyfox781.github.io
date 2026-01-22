@@ -87,6 +87,39 @@ header {
       border-bottom: 1px solid #fff;
       width: fit-content;
     }
+    
+    /* SECTIONS */
+    
+    .sections {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .section-card {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .section-card h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .section-card p {
+      color: #b5b5b5;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .section-card a {
+      color: #5bb8ff;
+      text-decoration: none;
+    }
 </style>
 </head>
 
@@ -96,18 +129,19 @@ header {
       <img src="https://cdn.discordapp.com/attachments/1065392816798310561/1463833892854169642/Logo_Univerbeta_.png?ex=6973450c&is=6971f38c&hm=8554179c0443defc0a9e848cbca99715b54310861ce56a82989f263ac7005af3&" alt="Univerbeta">
     </a>
   </header>
+
   
   <div class="container">
     <h1>Ressources supplémentaires</h1>
     <p>Ressources complémentaires destinées à accompagner les utilisateurs dans leur expérience sur Univerbeta.</p>
 
-
-    <h2>Responsabilité et mise en garde du Salon Selfie</h2>
-    <p>
-      Le salon selfie est mis à disposition par Univerbeta à des fins de partage volontaire et d’expression personnelle sur Chill Vibes ou Femboy Vibes.
- 
-   <a href="/">Voir le ressource.</a>
-       </p>
+<section class="sections">
+    <div class="section-card">
+      <h2>Responsabilité et mise en garde du Salon Selfie</h2>
+      <p>Le salon selfie est mis à disposition par Univerbeta à des fins de partage volontaire et d’expression personnelle.</p>
+      <a href="#">Voir</a>
+    </div>
+  </section>
 
 <div id="footer-placeholder"></div>
 </body>
