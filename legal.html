@@ -4,7 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mentions légales - Univerbeta</title>
-  <style>
+ 
+  <script>
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+    });
+</script>
+  
+   <style>
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -187,14 +196,7 @@ details[open] summary::after {
     France
   </div>
 
-  <div class="footer-bottom">
-    <p>© 2026 Univerbeta. Tous droits réservés</p>
+<div id="footer-placeholder"></div>
 
-    <details>
-        <summary>Guide</summary>
-      <a href="terms">Conditions d'utilisation</a>
-      <a href="#">Informations sur Univerbeta</a>
-    </details>
-  </div>
 </body>
 </html>
