@@ -2,114 +2,164 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Carousel style Apple</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Découvrez Chill Vibes - Univerbeta</title>
   <style>
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #f5f5f7;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #0f0f0f;
+      color: #fff;
     }
 
-    h1 {
-      padding: 20px;
-      font-size: 28px;
-    }
-
-    .carousel {
+    header {
+      height: 70px;
       display: flex;
-      gap: 16px;
-      padding: 0 20px 30px;
+      align-items: center;
+      padding: 0 20px;
+      background: #000;
+      border-bottom: 1px solid #1c1c1c;
+    }
 
+    header img {
+      height: 30px;
+      margin-right: 12px;
+    }
+
+    header h1 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 70px 20px 40px;
+    }
+
+    .hero h2 {
+      font-size: 40px;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .hero p {
+      color: #b5b5b5;
+      font-size: 16px;
+      max-width: 700px;
+      margin: 10px auto 0;
+    }
+
+    /* CARDS */
+    .cards-wrapper {
+      padding: 40px 0;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
     }
 
-    .carousel::-webkit-scrollbar {
-      display: none;
+    .cards {
+      display: flex;
+      gap: 20px;
+      padding: 0 20px;
     }
 
     .card {
-      flex: 0 0 80%;
-      height: 420px;
-      border-radius: 24px;
-      padding: 24px;
-      color: white;
-
       scroll-snap-align: start;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      border: 1px solid #2a2a2a;
+      border-radius: 24px;
+      width: 320px;
+      padding: 20px;
+      text-align: center;
+      flex: 0 0 auto;
+      transition: transform 0.2s;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
-    .card .top {
-      font-size: 14px;
-      opacity: 0.8;
+    .card:hover {
+      transform: translateY(-4px);
     }
 
-    .card .bottom {
-      font-size: 26px;
+    .card .subtitle {
+      color: #b5b5b5;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 20px;
       font-weight: 600;
-      line-height: 1.2;
     }
 
-    /* Styles des cartes */
-    .card-1 {
-      background: #000;
+    .card img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 18px;
+      margin: 18px auto 0;
+      display: block;
     }
 
-    .card-2 {
-      background: url("https://images.unsplash.com/photo-1516726817505-f5ed825624d8")
-                  center / cover no-repeat;
-    }
+    /* FONDS PERSONNALISÉS */
+    .card-1 { background: #1a1a1a; }
+    .card-2 { background: #2b1a2b; }
+    .card-3 { background: #1a2b2b; }
+    .card-4 { background: #2b2b1a; }
 
-    .card-3 {
-      background: linear-gradient(135deg, #ff7a18, #ffb347);
-    }
-
-    /* Bouton + */
-    .plus {
-      align-self: flex-end;
-      width: 42px;
-      height: 42px;
-      background: white;
-      color: black;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      font-weight: 300;
+    footer {
+      padding: 20px;
+      text-align: center;
+      color: #777;
+      font-size: 13px;
+      border-top: 1px solid #1c1c1c;
     }
   </style>
 </head>
-
 <body>
 
-  <h1>Découvrez l’iPhone.</h1>
+  <header>
+    <img src="https://imagedelivery.net/TON_ACCOUNT_HASH/IMAGE_ID/public" alt="Logo Univerbeta">
+    <h1>Chill Vibes</h1>
+  </header>
 
-  <div class="carousel">
-    <div class="card card-1">
-      <div class="top">Innovation</div>
-      <div class="bottom">Irrésistiblement résistant.</div>
-      <div class="plus">+</div>
-    </div>
+  <section class="hero">
+    <h2>Découvrez Chill Vibes</h2>
+    <p>Un espace détente, fun et communauté. Ici, tu peux discuter, jouer, partager et te détendre.</p>
+  </section>
 
-    <div class="card card-2">
-      <div class="top">Caméras</div>
-      <div class="bottom">Sublimez vos photos.</div>
-      <div class="plus">+</div>
-    </div>
+  <section class="cards-wrapper">
+    <div class="cards">
 
-    <div class="card card-3">
-      <div class="top">Performance</div>
-      <div class="bottom">Ultra rapide.</div>
-      <div class="plus">+</div>
+      <div class="card card-1">
+        <div class="subtitle">Communauté</div>
+        <h3>Discussions & rencontres</h3>
+        <img src="https://imagedelivery.net/TON_ACCOUNT_HASH/IMAGE_ID/public" alt="Discussions Chill Vibes">
+      </div>
+
+      <div class="card card-2">
+        <div class="subtitle">Événements</div>
+        <h3>Soirées et jeux</h3>
+        <img src="https://imagedelivery.net/TON_ACCOUNT_HASH/IMAGE_ID/public" alt="Événements Chill Vibes">
+      </div>
+
+      <div class="card card-3">
+        <div class="subtitle">Détente</div>
+        <h3>Ambiance chill</h3>
+        <img src="https://imagedelivery.net/TON_ACCOUNT_HASH/IMAGE_ID/public" alt="Ambiance Chill Vibes">
+      </div>
+
+      <div class="card card-4">
+        <div class="subtitle">Support</div>
+        <h3>Aide & modération</h3>
+        <img src="https://imagedelivery.net/TON_ACCOUNT_HASH/IMAGE_ID/public" alt="Support Chill Vibes">
+      </div>
+
     </div>
-  </div>
+  </section>
+
+  <footer>
+    © 2026 Univerbeta — Chill Vibes
+  </footer>
 
 </body>
 </html>
