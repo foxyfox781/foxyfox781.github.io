@@ -1,122 +1,115 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Découvrez Chill Vibes</title>
+  <meta charset="UTF-8">
+  <title>Carousel style Apple</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #fff;
-  color: #111;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f5f5f7;
+    }
 
-/* --- Slider --- */
-.slider {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
+    h1 {
+      padding: 20px;
+      font-size: 28px;
+    }
 
-.slide {
-  min-width: 100%;
-  height: 90vh;
-  scroll-snap-align: start;
-  position: relative;
-}
+    .carousel {
+      display: flex;
+      gap: 16px;
+      padding: 0 20px 30px;
 
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
 
-/* --- Texte dans l’image --- */
-.slide-text {
-  position: absolute;
-  bottom: 60px;
-  left: 40px;
-  color: white;
-}
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
 
-.slide-text small {
-  display: block;
-  opacity: 0.8;
-  margin-bottom: 8px;
-}
+    .card {
+      flex: 0 0 80%;
+      height: 420px;
+      border-radius: 24px;
+      padding: 24px;
+      color: white;
 
-.slide-text h1 {
-  font-size: 42px;
-  margin: 0;
-}
+      scroll-snap-align: start;
 
-/* --- Section texte --- */
-.section {
-  max-width: 900px;
-  margin: 120px auto;
-  padding: 0 24px;
-}
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-.section h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
+    .card .top {
+      font-size: 14px;
+      opacity: 0.8;
+    }
 
-.section p {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #444;
-}
+    .card .bottom {
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
 
-/* Cache la scrollbar (Apple style) */
-.slider::-webkit-scrollbar {
-  display: none;
-}
-</style>
+    /* Styles des cartes */
+    .card-1 {
+      background: #000;
+    }
+
+    .card-2 {
+      background: url("https://images.unsplash.com/photo-1516726817505-f5ed825624d8")
+                  center / cover no-repeat;
+    }
+
+    .card-3 {
+      background: linear-gradient(135deg, #ff7a18, #ffb347);
+    }
+
+    /* Bouton + */
+    .plus {
+      align-self: flex-end;
+      width: 42px;
+      height: 42px;
+      background: white;
+      color: black;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 300;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- SLIDER -->
-<div class="slider">
-  <div class="slide">
-    <img src="https://imagedelivery.net/eSuOzmGvDAcDPsodHpTqgA/30351f1e-c522-49f2-eb6a-562800ad2100/public" alt="">
-    <div class="slide-text">
-      <small>Mascotte</small>
-      <h1>Voici Yume.</h1>
+  <h1>Découvrez l’iPhone.</h1>
+
+  <div class="carousel">
+    <div class="card card-1">
+      <div class="top">Innovation</div>
+      <div class="bottom">Irrésistiblement résistant.</div>
+      <div class="plus">+</div>
+    </div>
+
+    <div class="card card-2">
+      <div class="top">Caméras</div>
+      <div class="bottom">Sublimez vos photos.</div>
+      <div class="plus">+</div>
+    </div>
+
+    <div class="card card-3">
+      <div class="top">Performance</div>
+      <div class="bottom">Ultra rapide.</div>
+      <div class="plus">+</div>
     </div>
   </div>
-
-  <div class="slide">
-    <img src="https://images.unsplash.com/photo-1512499617640-c2f999098c01" alt="">
-    <div class="slide-text">
-      <small>Caméra</small>
-      <h1>Des photos incroyables.</h1>
-    </div>
-  </div>
-</div>
-
-<!-- TEXTE NORMAL -->
-<section class="section">
-  <h2>Conçu pour durer</h2>
-  <p>
-    Chaque détail a été pensé pour offrir une expérience fluide,
-    durable et élégante. Des matériaux premium aux performances
-    optimisées, tout est fait pour que la technologie s’efface
-    derrière l’usage.
-  </p>
-</section>
-
-<section class="section">
-  <h2>Une simplicité évidente</h2>
-  <p>
-    Pas besoin d’en faire trop. Tout est intuitif, rapide,
-    et parfaitement intégré à votre quotidien.
-  </p>
-</section>
 
 </body>
 </html>
