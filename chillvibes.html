@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Découvrez Chill Vibes - Univerbeta</title>
+  
+    <script>
+  fetch('footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+    });
+</script>
+  
   <style>
     body {
       margin: 0;
@@ -16,20 +25,20 @@
       height: 70px;
       display: flex;
       align-items: center;
-      padding: 0 20px;
-      background: #000;
-      border-bottom: 1px solid #1c1c1c;
+      padding: 0 30px;
+      border-bottom: 1px solid #000;
     }
 
-    header img {
-      height: 30px;
-      margin-right: 12px;
+    .logo img {
+      height: 40px;
     }
 
-    header h1 {
-      font-size: 18px;
-      font-weight: 600;
-      margin: 0;
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      border: 1px solid #000;
+      background: #0f0f0f;
     }
 
     .hero {
@@ -150,9 +159,7 @@
     </div>
   </section>
 
-  <footer>
-    © 2026 Univerbeta — Chill Vibes
-  </footer>
+<div id="footer-placeholder"></div>
 
 </body>
 </html>
