@@ -1,84 +1,71 @@
 <style>
 footer {
-      border-top: 1px solid #e5e5e5;
-      padding: 24px 16px;
-      max-width: 480px;
-      margin: auto;
-    }
+  border-top: 1px solid #e5e5e5;
+  padding: 24px 16px;
+  max-width: 480px;
+  margin: auto;
+}
 
-    /* Accordéon header */
-    .accordion-header {
-      border-bottom: 1px solid #e5e5e5;
-      padding: 16px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      font-weight: 600;
-    }
+/* Accordéon header */
+.accordion-header {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+}
 
-    .accordion-header span.icon {
-      transition: transform 0.3s ease;
-    }
+.accordion-header span.icon {
+  transition: transform 0.3s ease;
+}
 
-    .accordion-header.active span.icon {
-      transform: rotate(180deg);
-    }
+.accordion-header.active span.icon {
+  transform: rotate(180deg);
+}
 
-    /* Contenu accordéon */
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease, opacity 0.25s ease;
-      opacity: 0;
-    }
+/* Contenu accordéon */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+  opacity: 0;
+}
 
-    .accordion-content ul {
-      padding: 12px 0 16px 0;
-      margin: 0;
-      list-style: none;
-      color: #777;
-      font-size: 14px;
-    }
+.accordion-content.open {
+  opacity: 1;
+  max-height: 500px; /* assez grand pour contenir le contenu */
+}
 
-    .accordion-content li {
-      margin: 8px 0;
-    }
+/* Pays */
+.country {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #777;
+  margin: 20px 0;
+  font-size: 14px;
+}
 
-    .accordion-content.open {
-      opacity: 1;
-    }
+/* Mentions légales */
+.legal {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.6;
+}
 
-    /* Pays */
-    .country {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #777;
-      margin: 20px 0;
-      font-size: 14px;
-    }
+.legal a {
+  display: block;
+  color: #777;
+  text-decoration: none;
+  margin-top: 6px;
+}
 
-    /* Mentions légales */
-    .legal {
-      font-size: 14px;
-      color: #777;
-      line-height: 1.6;
-    }
-
-    .legal a {
-      display: block;
-      color: #777;
-      text-decoration: none;
-      margin-top: 6px;
-    }
-
-    .legal a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
+.legal a:hover {
+  text-decoration: underline;
+}
+</style>
 
 <footer>
 
@@ -139,7 +126,7 @@ footer {
   </div>
 
   <div class="legal">
-    © 2026 Nike, Inc. Tous droits réservés
+    © 2026 Univerbeta. Tous droits réservés
     <a href="#">Conditions d'utilisation</a>
     <a href="#">Conditions générales de vente</a>
     <a href="#">Informations sur l'entreprise</a>
@@ -157,17 +144,7 @@ footer {
       const content = header.nextElementSibling;
 
       header.classList.toggle('active');
-
-      if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-        content.classList.remove('open');
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-        content.classList.add('open');
-      }
+      content.classList.toggle('open');
     });
   });
 </script>
-
-</body>
-</html>
