@@ -4,18 +4,98 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Payer Vibes Star - Univerbeta</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, #0b0b0b, #1a1a1a);
+      color: #fff;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    .topbar h1 {
+      font-size: 18px;
+      margin: 0;
+      letter-spacing: 0.5px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 44px;
+      margin: 0 0 10px;
+    }
+
+    .subtitle {
+      color: rgba(255,255,255,0.7);
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 22px;
+      padding: 40px 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      display: inline-block;
+    }
+
+    .card p {
+      margin: 0 0 24px;
+      color: rgba(255,255,255,0.8);
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Payer Vibes Star</h1>
 
-  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+  <div class="topbar">
+    <div class="logo">U</div>
+    <h1>Univerbeta • Vibes Star</h1>
+  </div>
 
-  <stripe-buy-button
-    buy-button-id="buy_btn_1St8Y8GrVkZOqruMSUHK25mU"
-    publishable-key="pk_live_51St7rEGrVkZOqruMSlIRU8frQZeWinfLqJAp15bzpwqfn9XxT5NIgk4Q9kvo300NXGYG9w6"
-    data-success-url="https://univerbeta.com/confirmation.html"
-    data-cancel-url="https://univerbeta.com/pay-vibes-star.html"
-  ></stripe-buy-button>
+  <div class="container">
+    <div class="title">Payer Vibes Star</div>
+    <div class="subtitle">Un abonnement premium pour obtenir des avantages exclusifs sur le serveur.</div>
+
+    <div class="card">
+      <p>Clique sur le bouton ci-dessous pour payer via Stripe.</p>
+
+      <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
+      <stripe-buy-button
+        buy-button-id="buy_btn_1St8Y8GrVkZOqruMSUHK25mU"
+        publishable-key="pk_live_51St7rEGrVkZOqruMSlIRU8frQZeWinfQjAp15bzpwqfn9XxT5NIgk4Q9kVop3OvqR2ZHfryqcc7oJrPdbenkvo300NXGYG9w6"
+      ></stripe-buy-button>
+    </div>
+  </div>
 
 </body>
 </html>
