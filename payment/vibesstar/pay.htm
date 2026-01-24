@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paiement - Univerbeta</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payer Vibes Star - Univerbeta</title>
 </head>
 <body>
-  <h1>Paiement</h1>
-  <button id="checkout">Payer maintenant</button>
+  <h1>Payer Vibes Star</h1>
 
-  <script src="https://js.stripe.com/v3/"></script>
-  <script>
-    const stripe = Stripe("https://buy.stripe.com/test_aFa9AM9EW5Do52HaFlgEg00");
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 
-    document.getElementById("checkout").addEventListener("click", async () => {
-      const res = await fetch("/create-checkout-session", { method: "POST" });
-      const data = await res.json();
-      stripe.redirectToCheckout({ sessionId: data.id });
-    });
-  </script>
+  <stripe-buy-button
+    buy-button-id="buy_btn_1St8Y8GrVkZOqruMSUHK25mU"
+    publishable-key="pk_live_51St7rEGrVkZOqruMSlIRU8frQZeWinfLqJAp15bzpwqfn9XxT5NIgk4Q9kvo300NXGYG9w6"
+    data-success-url="https://univerbeta.com/confirmation.html"
+    data-cancel-url="https://univerbeta.com/pay-vibes-star.html"
+  ></stripe-buy-button>
+
 </body>
 </html>
