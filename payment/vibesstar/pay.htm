@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paiement - Univerbeta</title>
+</head>
+<body>
+  <h1>Paiement</h1>
+  <button id="checkout">Payer maintenant</button>
+
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    const stripe = Stripe("https://buy.stripe.com/test_aFa9AM9EW5Do52HaFlgEg00");
+
+    document.getElementById("checkout").addEventListener("click", async () => {
+      const res = await fetch("/create-checkout-session", { method: "POST" });
+      const data = await res.json();
+      stripe.redirectToCheckout({ sessionId: data.id });
+    });
+  </script>
+</body>
+</html>
