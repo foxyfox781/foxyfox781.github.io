@@ -1,0 +1,95 @@
+<style>
+/* Pied de page */
+.mobile-footer {
+  background: #000;
+  color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.mobile-footer details {
+  border-top: 1px solid #e5e5e5;
+  padding: 18px 16px;
+}
+
+.mobile-footer summary {
+  list-style: none;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+
+.mobile-footer summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-footer summary::after {
+  content: "⌄";
+  position: absolute;
+  right: 0;
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+
+.mobile-footer details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.mobile-footer a {
+  display: block;
+  margin-top: 14px;
+  font-size: 15px;
+  color: #6e6e6e;
+  text-decoration: none;
+}
+
+.footer-country {
+  border-top: 1px solid #e5e5e5;
+  padding: 16px;
+  font-size: 15px;
+  color: #6e6e6e;
+}
+
+.footer-bottom {
+  border-top: 1px solid #e5e5e5;
+  padding: 16px;
+  font-size: 13px;
+  color: #6e6e6e;
+}
+
+.footer-bottom p {
+  margin-bottom: 12px;
+}
+</style>
+
+<footer class="mobile-footer">
+
+  <details>
+    <summary>Créations</summary>
+    <a href="chillvibes">Chill Vibes</a>
+    <a href="femboyvibes">Femboy Vibes</a>
+  </details>
+
+  <details>
+    <summary>Aide</summary>
+    <a href="https://support.univerbeta.com">Centre d’aide</a>
+    <a href="statut">Statut des services</a>
+  </details>
+
+  <div class="footer-country">
+    France
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Univerbeta. Tous droits réservés</p>
+
+    <details>
+        <summary>Guide</summary>
+      <a href="terms">Conditions d'utilisation</a>
+      <a href="privacy">Politique de confidentialité</a>
+      <a href="legal">Mentions légales</a>
+      <a href="#">Informations sur Univerbeta</a>
+    </details>
+  </div>
+
+</footer>
