@@ -1,138 +1,162 @@
 <style>
-.site-footer {
-  background: #000;
-  color: #b5b5b5;
+.lux-footer {
+  position: relative;
+  background: radial-gradient(1200px 400px at top, #111 0%, #000 60%);
+  color: #d0d0d0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  border-top: 1px solid #1c1c1c;
+  overflow: hidden;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Glow subtil */
+.lux-glow {
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0,113,227,0.25), transparent 70%);
+  transform: translateX(-50%);
+  pointer-events: none;
 }
 
 /* TOP */
-.footer-top {
+.lux-top {
   text-align: center;
-  padding: 40px 20px 20px;
+  padding: 80px 20px 40px;
+  backdrop-filter: blur(8px);
 }
 
-.footer-logo {
-  height: 42px;
-  margin-bottom: 16px;
+.lux-logo {
+  height: 44px;
+  margin-bottom: 18px;
 }
 
-.footer-socials {
+.lux-tagline {
+  font-size: 16px;
+  color: #9a9a9a;
+  max-width: 480px;
+  margin: 0 auto 26px;
+}
+
+.lux-socials {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 26px;
 }
 
-.footer-socials img {
-  width: 22px;
-  height: 22px;
-  opacity: 0.7;
-  transition: opacity 0.2s;
+.lux-socials a {
+  color: #b5b5b5;
+  text-decoration: none;
+  font-size: 14px;
+  position: relative;
 }
 
-.footer-socials img:hover {
-  opacity: 1;
+.lux-socials a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background: #0071e3;
+  transition: width 0.3s;
+}
+
+.lux-socials a:hover::after {
+  width: 100%;
 }
 
 /* LINKS */
-.footer-container {
+.lux-links {
   max-width: 1200px;
   margin: auto;
-  padding: 40px 20px;
+  padding: 60px 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 40px;
+  gap: 50px;
 }
 
-.footer-col h4 {
+.lux-links h4 {
   color: #fff;
   font-size: 14px;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   font-weight: 600;
 }
 
-.footer-col a {
+.lux-links a {
   display: block;
   color: #b5b5b5;
   font-size: 14px;
   text-decoration: none;
-  margin-bottom: 10px;
-  transition: color 0.2s;
+  margin-bottom: 12px;
+  transition: transform 0.2s, color 0.2s;
 }
 
-.footer-col a:hover {
+.lux-links a:hover {
   color: #fff;
+  transform: translateX(4px);
 }
 
 /* BOTTOM */
-.footer-bottom {
-  border-top: 1px solid #1c1c1c;
-  padding: 20px;
+.lux-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 24px;
   text-align: center;
   font-size: 13px;
-  color: #777;
-}
-
-.footer-bottom span {
-  display: block;
-  margin-bottom: 6px;
+  color: #7a7a7a;
 }
 </style>
 
 
-<footer class="site-footer">
+<footer class="lux-footer">
 
-  <!-- TOP -->
-  <div class="footer-top">
-    <img src="/images/logo-univerbeta.png" alt="Univerbeta" class="footer-logo">
+  <div class="lux-glow"></div>
 
-    <div class="footer-socials">
-      <a href="https://discord.gg/8XcDHTYaUA" aria-label="Discord">
-        <img src="/icons/discord.svg" alt="">
-      </a>
-      <a href="#" aria-label="X">
-        <img src="/icons/x.svg" alt="">
-      </a>
-      <a href="#" aria-label="Instagram">
-        <img src="/icons/instagram.svg" alt="">
-      </a>
+  <div class="lux-top">
+    <img src="/images/logo-univerbeta.png" alt="Univerbeta" class="lux-logo">
+
+    <p class="lux-tagline">
+      Construire des communautés, créer des expériences.
+    </p>
+
+    <div class="lux-socials">
+      <a href="https://discord.gg/8XcDHTYaUA">Discord</a>
+      <a href="#">X</a>
+      <a href="#">Instagram</a>
     </div>
   </div>
 
-  <!-- LINKS -->
-  <div class="footer-container">
-
-    <div class="footer-col">
+  <div class="lux-links">
+    <div>
       <h4>Créations</h4>
       <a href="/chillvibes">Chill Vibes</a>
       <a href="/femboyvibes">Femboy Vibes</a>
       <a href="/airblyx">Airblyx</a>
     </div>
 
-    <div class="footer-col">
-      <h4>Aide</h4>
+    <div>
+      <h4>Support</h4>
       <a href="/support">Centre d’aide</a>
       <a href="/discord/deban">Demande de déban</a>
       <a href="/statut">Statut des services</a>
     </div>
 
-    <div class="footer-col">
+    <div>
       <h4>Légal</h4>
-      <a href="/terms">Conditions d’utilisation</a>
+      <a href="/terms">Conditions</a>
       <a href="/privacy">Confidentialité</a>
       <a href="/mentions">Mentions légales</a>
     </div>
 
-    <div class="footer-col">
+    <div>
       <h4>Univerbeta</h4>
       <a href="/about">À propos</a>
       <a href="/contact">Contact</a>
     </div>
-
   </div>
 
-  <!-- BOTTOM -->
-  <div class="footer-bottom">
+  <div class="lux-bottom">
     <span>France</span>
     <p>© 2026 Univerbeta. Tous droits réservés.</p>
   </div>
