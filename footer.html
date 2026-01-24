@@ -1,15 +1,44 @@
 <style>
 .site-footer {
   background: #000;
-  border-top: 1px solid #1c1c1c;
   color: #b5b5b5;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  border-top: 1px solid #1c1c1c;
 }
 
+/* TOP */
+.footer-top {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+.footer-logo {
+  height: 42px;
+  margin-bottom: 16px;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.footer-socials img {
+  width: 22px;
+  height: 22px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.footer-socials img:hover {
+  opacity: 1;
+}
+
+/* LINKS */
 .footer-container {
   max-width: 1200px;
   margin: auto;
-  padding: 50px 20px;
+  padding: 40px 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 40px;
@@ -35,6 +64,7 @@
   color: #fff;
 }
 
+/* BOTTOM */
 .footer-bottom {
   border-top: 1px solid #1c1c1c;
   padding: 20px;
@@ -51,6 +81,25 @@
 
 
 <footer class="site-footer">
+
+  <!-- TOP -->
+  <div class="footer-top">
+    <img src="/images/logo-univerbeta.png" alt="Univerbeta" class="footer-logo">
+
+    <div class="footer-socials">
+      <a href="https://discord.gg/8XcDHTYaUA" aria-label="Discord">
+        <img src="/icons/discord.svg" alt="">
+      </a>
+      <a href="#" aria-label="X">
+        <img src="/icons/x.svg" alt="">
+      </a>
+      <a href="#" aria-label="Instagram">
+        <img src="/icons/instagram.svg" alt="">
+      </a>
+    </div>
+  </div>
+
+  <!-- LINKS -->
   <div class="footer-container">
 
     <div class="footer-col">
@@ -70,7 +119,7 @@
     <div class="footer-col">
       <h4>Légal</h4>
       <a href="/terms">Conditions d’utilisation</a>
-      <a href="/privacy">Politique de confidentialité</a>
+      <a href="/privacy">Confidentialité</a>
       <a href="/mentions">Mentions légales</a>
     </div>
 
@@ -78,13 +127,14 @@
       <h4>Univerbeta</h4>
       <a href="/about">À propos</a>
       <a href="/contact">Contact</a>
-      <a href="https://discord.gg/8XcDHTYaUA">Discord</a>
     </div>
 
   </div>
 
+  <!-- BOTTOM -->
   <div class="footer-bottom">
     <span>France</span>
     <p>© 2026 Univerbeta. Tous droits réservés.</p>
   </div>
+
 </footer>
