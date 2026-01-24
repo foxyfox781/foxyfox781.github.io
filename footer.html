@@ -1,162 +1,95 @@
 <style>
-.lux-footer {
-  position: relative;
-  background: radial-gradient(1200px 400px at top, #111 0%, #000 60%);
-  color: #d0d0d0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  overflow: hidden;
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff;
+      color: #111;
+    }
 
-/* Glow subtil */
-.lux-glow {
-  position: absolute;
-  top: -200px;
-  left: 50%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(0,113,227,0.25), transparent 70%);
-  transform: translateX(-50%);
-  pointer-events: none;
-}
+    footer {
+      border-top: 1px solid #e5e5e5;
+      padding: 24px 16px;
+      max-width: 480px;
+      margin: auto;
+    }
 
-/* TOP */
-.lux-top {
-  text-align: center;
-  padding: 80px 20px 40px;
-  backdrop-filter: blur(8px);
-}
+    .accordion {
+      border-bottom: 1px solid #e5e5e5;
+      padding: 16px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 600;
+    }
 
-.lux-logo {
-  height: 44px;
-  margin-bottom: 18px;
-}
+    .accordion span {
+      font-size: 18px;
+    }
 
-.lux-tagline {
-  font-size: 16px;
-  color: #9a9a9a;
-  max-width: 480px;
-  margin: 0 auto 26px;
-}
+    .country {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #777;
+      margin: 20px 0;
+    }
 
-.lux-socials {
-  display: flex;
-  justify-content: center;
-  gap: 26px;
-}
+    .legal {
+      font-size: 14px;
+      color: #777;
+      line-height: 1.6;
+    }
 
-.lux-socials a {
-  color: #b5b5b5;
-  text-decoration: none;
-  font-size: 14px;
-  position: relative;
-}
+    .legal a {
+      display: block;
+      color: #777;
+      text-decoration: none;
+      margin-top: 6px;
+    }
 
-.lux-socials a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0%;
-  height: 1px;
-  background: #0071e3;
-  transition: width 0.3s;
-}
+    .legal a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
 
-.lux-socials a:hover::after {
-  width: 100%;
-}
-
-/* LINKS */
-.lux-links {
-  max-width: 1200px;
-  margin: auto;
-  padding: 60px 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 50px;
-}
-
-.lux-links h4 {
-  color: #fff;
-  font-size: 14px;
-  margin-bottom: 16px;
-  font-weight: 600;
-}
-
-.lux-links a {
-  display: block;
-  color: #b5b5b5;
-  font-size: 14px;
-  text-decoration: none;
-  margin-bottom: 12px;
-  transition: transform 0.2s, color 0.2s;
-}
-
-.lux-links a:hover {
-  color: #fff;
-  transform: translateX(4px);
-}
-
-/* BOTTOM */
-.lux-bottom {
-  border-top: 1px solid rgba(255,255,255,0.08);
-  padding: 24px;
-  text-align: center;
-  font-size: 13px;
-  color: #7a7a7a;
-}
-</style>
-
-
-<footer class="lux-footer">
-
-  <div class="lux-glow"></div>
-
-  <div class="lux-top">
-    <img src="https://imagedelivery.net/eSuOzmGvDAcDPsodHpTqgA/61a057d6-73f1-4abc-61b3-b4193b64a200/public" alt="Univerbeta" class="lux-logo">
-
-    <p class="lux-tagline">
-      Construire des communautés, créer des expériences.
-    </p>
-
-    <div class="lux-socials">
-      <a href="https://discord.gg/8XcDHTYaUA">Discord</a>
-      <a href="https://www.instagram.com/univerbeta">Instagram</a>
-    </div>
+<footer>
+  <div class="accordion">
+    <span>Ressources</span>
+    <span>⌄</span>
   </div>
 
-  <div class="lux-links">
-    <div>
-      <h4>Créations</h4>
-      <a href="discord/chillvibes">Chill Vibes</a>
-      <a href="dsicord/femboyvibes">Femboy Vibes</a>
-      <a href="discord/airblyx">Airblyx</a>
-    </div>
-
-    <div>
-      <h4>Support</h4>
-      <a href="https://support.univerbeta.com">Centre d’aide</a>
-      <a href="https://support.univerbeta.com/discord/deban">Demande de déban</a>
-      <a href="support/statut">Statut des services</a>
-    </div>
-
-    <div>
-      <h4>Univerbeta</h4>
-      <a href="/about">À propos</a>
-      <a href="https://support.univerbeta.com/contact">Contact</a>
-    </div>
+  <div class="accordion">
+    <span>Aide</span>
+    <span>⌄</span>
   </div>
 
-  <div class="lux-bottom">
-    <span>France</span>
-    <p>© 2026 Univerbeta. Tous droits réservés.</p>
-    </div>
-    <a href="legal/terms">Conditions d'utilisation</a>
-      <a href="legal/privacy">Confidentialité</a>
-      <a href="legal">Mentions légales</a>
-      </div>
+  <div class="accordion">
+    <span>Entreprise</span>
+    <span>⌄</span>
   </div>
-  
-    
+
+  <div class="accordion">
+    <span>Promotions liées à la communauté</span>
+    <span>⌄</span>
+  </div>
+
+  <div class="country">
+    🌐 <span>France</span>
+  </div>
+
+  <div class="legal">
+    © 2026 Nike, Inc. Tous droits réservés
+    <a href="#">Guides</a>
+    <a href="#">Conditions d'utilisation</a>
+    <a href="#">Conditions générales de vente</a>
+    <a href="#">Informations sur l'entreprise</a>
+    <a href="#">Politique de confidentialité et de gestion des cookies</a>
+    <a href="#">Paramètres de confidentialité et des cookies</a>
+  </div>
 </footer>
+
+</body>
+</html>
