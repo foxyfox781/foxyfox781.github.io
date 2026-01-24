@@ -1,146 +1,111 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Footer Accordéon</title>
+<style>
+footer {
+  border-top: 1px solid #e5e5e5;
+  padding: 24px 16px;
+  max-width: 480px;
+  margin: auto;
+}
 
-  <style>
-    footer {
-      border-top: 1px solid #e5e5e5;
-      padding: 24px 16px;
-      max-width: 480px;
-      margin: auto;
-    }
+details {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 16px 0;
+}
 
-    /* Accordéon header */
-    .accordion-header {
-      border-bottom: 1px solid #e5e5e5;
-      padding: 16px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      font-weight: 600;
-    }
+summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .accordion-header span.icon {
-      transition: transform 0.3s ease;
-    }
+summary::-webkit-details-marker {
+  display: none;
+}
 
-    .accordion-header.active span.icon {
-      transform: rotate(180deg);
-    }
+summary span.icon {
+  transition: transform 0.3s ease;
+}
 
-    /* Contenu accordéon */
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease, opacity 0.25s ease;
-      opacity: 0;
-    }
+details[open] summary span.icon {
+  transform: rotate(180deg);
+}
 
-    .accordion-content.open {
-      opacity: 1;
-      max-height: 999px;
-    }
+details ul {
+  margin: 12px 0 16px 0;
+  padding: 0;
+  list-style: none;
+  color: #777;
+  font-size: 14px;
+}
 
-    .accordion-content ul {
-      padding: 12px 0 16px 0;
-      margin: 0;
-      list-style: none;
-      color: #777;
-      font-size: 14px;
-    }
+details ul li {
+  margin: 8px 0;
+}
 
-    .accordion-content li {
-      margin: 8px 0;
-    }
+.country {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #777;
+  margin: 20px 0;
+  font-size: 14px;
+}
 
-    /* Pays */
-    .country {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #777;
-      margin: 20px 0;
-      font-size: 14px;
-    }
+.legal {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.6;
+}
 
-    /* Mentions légales */
-    .legal {
-      font-size: 14px;
-      color: #777;
-      line-height: 1.6;
-    }
-
-    .legal a {
-      display: block;
-      color: #777;
-      text-decoration: none;
-      margin-top: 6px;
-    }
-
-    .legal a:hover {
-      text-decoration: underline;
-    }
-  </style>
+.legal a {
+  display: block;
+  color: #777;
+  text-decoration: none;
+  margin-top: 6px;
+}
+</style>
 </head>
 <body>
 
 <footer>
 
-  <div class="accordion">
-    <div class="accordion-header">
-      Ressources <span class="icon">⌄</span>
-    </div>
-    <div class="accordion-content">
-      <ul>
-        <li>Cartes cadeaux</li>
-        <li>Cartes des magasins</li>
-        <li>Devenir membre</li>
-      </ul>
-    </div>
-  </div>
+  <details>
+    <summary>Ressources <span class="icon">⌄</span></summary>
+    <ul>
+      <li>Cartes cadeaux</li>
+      <li>Cartes des magasins</li>
+      <li>Devenir membre</li>
+    </ul>
+  </details>
 
-  <div class="accordion">
-    <div class="accordion-header">
-      Aide <span class="icon">⌄</span>
-    </div>
-    <div class="accordion-content">
-      <ul>
-        <li><a href="support/statut">Statut des services</a></li>
-        <li>Livraison</li>
-        <li>Retours</li>
-      </ul>
-    </div>
-  </div>
+  <details>
+    <summary>Aide <span class="icon">⌄</span></summary>
+    <ul>
+      <li><a href="support/statut">Statut des services</a></li>
+      <li>Livraison</li>
+      <li>Retours</li>
+    </ul>
+  </details>
 
-  <div class="accordion">
-    <div class="accordion-header">
-      Entreprise <span class="icon">⌄</span>
-    </div>
-    <div class="accordion-content">
-      <ul>
-        <li>À propos</li>
-        <li>Carrières</li>
-        <li>Investisseurs</li>
-      </ul>
-    </div>
-  </div>
+  <details>
+    <summary>Entreprise <span class="icon">⌄</span></summary>
+    <ul>
+      <li>À propos</li>
+      <li>Carrières</li>
+      <li>Investisseurs</li>
+    </ul>
+  </details>
 
-  <div class="accordion">
-    <div class="accordion-header">
-      Promotions liées à la communauté <span class="icon">⌄</span>
-    </div>
-    <div class="accordion-content">
-      <ul>
-        <li>Étudiants</li>
-        <li>Enseignants</li>
-        <li>Premiers intervenants</li>
-      </ul>
-    </div>
-  </div>
+  <details>
+    <summary>Promotions liées à la communauté <span class="icon">⌄</span></summary>
+    <ul>
+      <li>Étudiants</li>
+      <li>Enseignants</li>
+      <li>Premiers intervenants</li>
+    </ul>
+  </details>
 
   <div class="country">
     🌐 France
@@ -156,27 +121,6 @@
   </div>
 
 </footer>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const headers = document.querySelectorAll('.accordion-header');
-
-    headers.forEach(header => {
-      header.addEventListener('click', () => {
-        const content = header.nextElementSibling;
-
-        header.classList.toggle('active');
-        content.classList.toggle('open');
-
-        if (content.classList.contains('open')) {
-          content.style.maxHeight = content.scrollHeight + "px";
-        } else {
-          content.style.maxHeight = null;
-        }
-      });
-    });
-  });
-</script>
 
 </body>
 </html>
