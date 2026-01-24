@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Vibes Star – Chill Vibes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #fff;
+    }
+
+    .vibes-star-hero {
+      background: linear-gradient(135deg, #ff2d55, #ff375f);
+      color: #fff;
+      text-align: center;
+    }
+
+    .top-banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 16px;
+      background: #fff;
+      color: #111;
+    }
+
+    .brand {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .badge-btn {
+      background: #ff2d55;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .badge-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 16px rgba(255, 45, 85, 0.35);
+    }
+
+    .badge-btn:active {
+      transform: scale(0.98);
+    }
+
+    .top-text {
+      padding: 14px 16px;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      font-size: 14px;
+    }
+
+    .top-text a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    .hero-content {
+      padding: 80px 20px;
+    }
+
+    .logo {
+      font-size: 34px;
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .hero-content h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      max-width: 520px;
+      margin: 0 auto 36px;
+      font-size: 18px;
+      line-height: 1.5;
+      opacity: 0.95;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #fff;
+      color: #ff2d55;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-size: 17px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.15s ease;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.04);
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="vibes-star-hero">
+
+  <div class="top-banner">
+    <span class="brand">Chill Vibes</span>
+    <a href="#" class="badge-btn">1 mois d’essai gratuit</a>
+  </div>
+
+  <p class="top-text">
+    Démarrez votre essai gratuit et découvrez l’expérience Vibes Star.
+    <a href="#">En savoir plus</a>
+  </p>
+
+  <div class="hero-content">
+    <span class="logo">★</span>
+    <h1>Vibes Star</h1>
+
+    <p class="description">
+      L’abonnement sans limite de Chill Vibes.
+      Accès total aux salons exclusifs, fonctionnalités premium,
+      événements spéciaux et avantages réservés aux membres.
+      Zéro pub. Zéro limite. Juste les vibes.
+    </p>
+
+    <a href="#" class="cta-button">
+      1 mois d’essai gratuit
+    </a>
+  </div>
+
+</section>
+
+</body>
+</html>
