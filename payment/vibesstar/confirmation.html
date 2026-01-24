@@ -2,82 +2,87 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <title>Merci pour votre achat – Univerbeta</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Confirmation de paiement</title>
+
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
       margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #f5f5f7;
+      color: #111;
+      text-align: center;
     }
 
-    .box {
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      width: 90%;
-      max-width: 420px;
+    .container {
+      max-width: 720px;
+      margin: 100px auto 60px;
+      padding: 40px 20px;
     }
 
     h1 {
-      margin: 0 0 10px;
-      font-size: 22px;
+      font-size: 38px;
+      margin-bottom: 12px;
     }
 
-    p {
-      margin: 0 0 20px;
-      color: #666;
-    }
-
-    input {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      background: #000;
-      color: #fff;
-      border-radius: 999px;
-      font-weight: 700;
-      cursor: pointer;
-      margin-top: 10px;
+    h2 {
+      font-size: 18px;
+      font-weight: 400;
+      color: #555;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     .info {
-      margin-top: 12px;
+      margin-top: 30px;
+      font-size: 15px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .image {
+      margin-top: 50px;
+    }
+
+    .image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 18px;
+    }
+
+    footer {
+      margin-top: 60px;
       font-size: 13px;
       color: #777;
+      padding-bottom: 30px;
     }
   </style>
 </head>
 <body>
 
-  <div class="box">
-    <h1>Confirmation de paiement</h1>
-    <p>Entre ton email (celui utilisé pour payer) et ton Discord.</p>
+  <div class="container">
+    <h1>Merci pour votre achat 💙</h1>
 
-    <form action="https://formspree.io/f/mbddbyeb" method="POST">
-      <input type="email" name="email" placeholder="Email utilisé pour payer" required>
-      <input type="text" name="discord" placeholder="Ton Discord (ex: Foxy#1234)" required>
-
-      <button type="submit">Envoyer</button>
-    </form>
+    <h2>
+      L’équipe Univerbeta va vous attribuer votre rôle<br>
+      dans les prochaines heures ou les prochains jours.
+    </h2>
 
     <div class="info">
-      ⚠️ Non remboursable — voir <a href="/conditions.html">conditions de vente</a>
+      Si le Discord renseigné lors du paiement est <strong>introuvable ou incorrect</strong>,  
+      vous serez <strong>remboursé automatiquement</strong> et <strong>informé par e-mail</strong>.
+    </div>
+
+    <div class="image">
+      <!-- Remplace le lien par l’image de Yume super contente -->
+      <img src="IMAGE_YUME_ICI" alt="Yume est super contente">
     </div>
   </div>
+
+  <footer>
+    © 2026 Univerbeta — Merci pour votre soutien
+  </footer>
 
 </body>
 </html>
