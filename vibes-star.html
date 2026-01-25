@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Crystal Vibes - Univerbeta</title>
   <style>
-    /* Normalise le box-sizing et applique la police */
     * {
       box-sizing: border-box;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
@@ -15,31 +14,9 @@
       margin: 0;
       min-height: 100vh;
       background: linear-gradient(180deg, #1db954 0%, #0b5d3a 100%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
       color: #fff;
     }
 
-    .container {
-      text-align: center;
-      max-width: 420px;
-      padding: 32px 24px 40px;
-    }
-
-    .logo {
-      width: 130px;
-      height: 130px;
-      margin: 0 auto 20px;
-    }
-
-    .logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-    
-    
     /* HEADER */
     header {
       height: 70px;
@@ -47,18 +24,34 @@
       align-items: center;
       padding: 0 30px;
       border-bottom: 1px solid #000;
+      background: #0f0f0f;
     }
 
-    .logo img {
+    header .logo img {
       height: 40px;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      border: 1px solid #000;
-      background: #0f0f0f;
+    /* MAIN */
+    .main-container {
+      text-align: center;
+      max-width: 420px;
+      margin: 40px auto;
+      padding: 32px 24px 40px;
+      background: rgba(0,0,0,0.25);
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .main-container .logo {
+      width: 130px;
+      height: 130px;
+      margin: 0 auto 20px;
+    }
+
+    .main-container .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     h1 {
@@ -107,7 +100,7 @@
     </a>
   </header>
 
-  <div class="container">
+  <div class="main-container">
     <div class="logo">
       <img src="https://imagedelivery.net/eSuOzmGvDAcDPsodHpTqgA/855bd93e-e7d7-425f-6443-1f263db63c00/public" alt="Crystal Vibes">
     </div>
