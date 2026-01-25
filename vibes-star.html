@@ -1,163 +1,102 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Vibes Star – Chill Vibes</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Landing Music</title>
   <style>
-  body {
+    * {
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: #fff;
-    }
-
-    /* HEADER */
-    header {
-      height: 70px;
+      min-height: 100vh;
+      background: linear-gradient(180deg, #c9162b 0%, #8a0f3c 100%);
       display: flex;
+      justify-content: center;
       align-items: center;
-      padding: 0 30px;
-      border-bottom: 1px solid #000;
-    }
-
-    .logo img {
-      height: 40px;
+      color: #fff;
     }
 
     .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      border: 1px solid #000;
-      background: #0f0f0f;
-    }
-    
-    .vibes-star-hero {
-      background: linear-gradient(135deg, #ff2d55, #ff375f);
-      color: #fff;
       text-align: center;
+      max-width: 420px;
+      padding: 32px 24px 40px;
     }
 
-    .top-banner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 16px;
+    .logo {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 20px;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .description {
+      font-size: 16px;
+      line-height: 1.5;
+      opacity: 0.95;
+      margin-bottom: 36px;
+    }
+
+    .cta {
+      display: inline-block;
       background: #fff;
-      color: #111;
-    }
-
-    .brand {
-      font-weight: 600;
-      font-size: 15px;
-    }
-
-    .badge-btn {
-      background: #ff2d55;
-      color: #fff;
-      padding: 6px 14px;
+      color: #000;
+      padding: 14px 28px;
       border-radius: 999px;
-      font-size: 13px;
       font-weight: 600;
+      font-size: 16px;
       text-decoration: none;
       transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
-    .badge-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 16px rgba(255, 45, 85, 0.35);
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
-    .badge-btn:active {
-      transform: scale(0.98);
-    }
-
-    .top-text {
-      padding: 14px 16px;
-      background: #f5f5f7;
-      color: #1d1d1f;
-      font-size: 14px;
-    }
-
-    .top-text a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-
-    .hero-content {
-      padding: 80px 20px;
-    }
-
-    .logo {
-      font-size: 34px;
-      display: block;
-      margin-bottom: 16px;
-    }
-
-    .hero-content h1 {
-      font-size: 42px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .description {
-      max-width: 520px;
-      margin: 0 auto 36px;
-      font-size: 18px;
-      line-height: 1.5;
-      opacity: 0.95;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background: #fff;
-      color: #ff2d55;
-      padding: 14px 28px;
-      border-radius: 999px;
-      font-size: 17px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: transform 0.15s ease;
-    }
-
-    .cta-button:hover {
-      transform: scale(1.04);
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 34px;
+      }
     }
   </style>
 </head>
-
 <body>
-<header>
-    <a href="index.html" class="logo">
-      <img src="https://imagedelivery.net/eSuOzmGvDAcDPsodHpTqgA/61a057d6-73f1-4abc-61b3-b4193b64a200/public" alt="Univerbeta">
-    </a>
-  </header>
-  
-<section class="vibes-star-hero">
 
-  <div class="top-banner">
-    <span class="brand">Vibes Star dans Chill Vibes</span>
-    <a href="#" class="badge-btn">11,99€ à vie</a>
-  </div>
+  <div class="container">
+    <!-- Remplace logo.png par ton propre logo -->
+    <div class="logo">
+      <img src="logo.png" alt="Crystal Vibes">
+    </div>
 
-  <div class="hero-content">
-    <span class="logo">★</span>
-    <h1>Vibes Star</h1>
+    <h1>Hymne<br>à la musique.</h1>
 
     <p class="description">
-      L’abonnement sans limite de Chill Vibes.
-      Accès total aux salons exclusifs, fonctionnalités premium,
-      événements spéciaux et avantages réservés aux membres.
+      Plus de 100 millions de morceaux sans publicité.
+      Une qualité sonore exceptionnelle grâce à l’audio immersif
+      et à l’audio Lossless.
+      Des contenus exclusifs comme des interviews d’artistes
+      et des concerts en direct.
+      En bref, le meilleur de la musique.
     </p>
 
-    <a href="#" class="cta-button">
-      11,99€ à vie
-    </a>
+    <a href="#" class="cta">1 mois d’essai gratuit**</a>
   </div>
-
-</section>
 
 </body>
 </html>
