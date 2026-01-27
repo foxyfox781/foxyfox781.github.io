@@ -16,23 +16,12 @@
       min-height: 100vh;
       text-align: center;
     }
-
     .container {
       max-width: 700px;
       padding: 40px 20px;
     }
-
-    h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      color: #cfcfcf;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
+    h1 { font-size: 32px; margin-bottom: 10px; }
+    p { color: #cfcfcf; line-height: 1.6; margin-bottom: 20px; }
     .status {
       margin-top: 20px;
       padding: 16px;
@@ -46,20 +35,13 @@
   <div class="container">
     <h1>Connexion Discord</h1>
     <p>On vérifie ton compte Discord…</p>
-
-    <div class="status" id="status">
-      Chargement…
-    </div>
+    <div class="status" id="status">Chargement…</div>
   </div>
 
   <script>
-    async function getCode() {
-      const params = new URLSearchParams(window.location.search);
-      return params.get("code");
-    }
-
     async function main() {
-      const code = await getCode();
+      const params = new URLSearchParams(window.location.search);
+      const code = params.get("code");
       const status = document.getElementById("status");
 
       if (!code) {
@@ -68,7 +50,7 @@
       }
 
       try {
-        const res = await fetch("https://TON_WORKER_URL", {
+        const res = await fetch("https://foxyfox781-github-io.pages.dev", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ code })
@@ -91,7 +73,6 @@
         status.innerText = "Erreur réseau. Réessaie.";
       }
     }
-
     main();
   </script>
 </body>
