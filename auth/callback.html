@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connexion Discord - Univerbeta</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connexion Discord...</title>
   <style>
     body {
+      margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       background: #0f0f0f;
       color: #fff;
@@ -13,73 +14,79 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      margin: 0;
-    }
-    .box {
-      background: #1a1a1a;
-      border: 1px solid #2b2b2b;
-      padding: 30px;
-      border-radius: 16px;
       text-align: center;
-      width: 90%;
-      max-width: 500px;
     }
-    .title {
-      font-size: 22px;
-      margin-bottom: 12px;
+
+    .container {
+      max-width: 900px;
+      padding: 40px 20px;
     }
-    .subtitle {
-      color: #aaa;
-      margin-bottom: 20px;
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
     }
-    .info {
-      text-align: left;
-      background: #0f0f0f;
-      padding: 14px;
-      border-radius: 12px;
-      border: 1px solid #2b2b2b;
-      margin-top: 20px;
+
+    p {
+      color: #cfcfcf;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 14px 26px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid #fff;
+      color: #fff;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.1);
     }
   </style>
 </head>
 <body>
-
-  <div class="box">
-    <div class="title">Connexion Discord</div>
-    <div class="subtitle">On vérifie ton compte…</div>
-
-    <div id="result" class="info">Chargement…</div>
+  <div class="container">
+    <h1>Connexion Discord...</h1>
+    <p id="status">On vérifie tes infos, attends 2 secondes.</p>
+    <a id="btn" class="btn" style="display:none;">Retour au site</a>
   </div>
 
   <script>
-    const resultEl = document.getElementById("result");
+    async function finish() {
+      const params = new URLSearchParams(window.location.search);
+      const code = params.get('code');
 
-    // Récupère le code dans l'URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const code = urlParams.get("code");
+      if (!code) {
+        document.getElementById('status').innerText = "Erreur : aucun code reçu.";
+        return;
+      }
 
-    if (!code) {
-      resultEl.innerHTML = "Erreur : aucun code Discord trouvé.";
-      throw new Error("No code");
+      // Envoie le code à ton Worker
+      const res = await fetch("https://TON-DOMAIN.workers.dev/auth/callback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ code })
+      });
+
+      const data = await res.json();
+
+      if (data.error) {
+        document.getElementById('status').innerText = "Erreur lors de la connexion : " + data.error;
+      } else {
+        document.getElementById('status').innerText =
+          "Connexion réussie ! Ton Discord : " + data.username + "#" + data.discriminator;
+      }
+
+      document.getElementById('btn').style.display = "inline-block";
+      document.getElementById('btn').href = "https://univerbeta.com";
     }
 
-    // Appel au Worker (backend)
-    fetch(`https://univerbeta.com/auth/callback?code=${code}`)
-      .then(res => res.json())
-      .then(user => {
-        resultEl.innerHTML = `
-          <strong>Connecté :</strong> ${user.username}#${user.discriminator}<br>
-          <strong>ID :</strong> ${user.id}<br>
-        `;
-
-        // Rediriger vers une page après connexion (optionnel)
-        // setTimeout(() => { window.location.href = "/dashboard.html"; }, 2000);
-      })
-      .catch(err => {
-        resultEl.innerHTML = "Erreur lors de la connexion. Réessaie.";
-        console.error(err);
-      });
+    finish();
   </script>
-
 </body>
 </html>
