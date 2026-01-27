@@ -16,16 +16,16 @@
       height: 100vh;
       background: #f5f5f7;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       color: #1d1d1f;
     }
 
     .card {
       width: 100%;
       max-width: 380px;
-      padding: 40px 32px;
       background: #fff;
+      padding: 40px 32px;
       border-radius: 18px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.08);
       text-align: center;
@@ -50,7 +50,6 @@
       border-radius: 12px;
       border: 1px solid #d2d2d7;
       font-size: 16px;
-      background: #fff;
     }
 
     input:focus {
@@ -86,6 +85,13 @@
       text-decoration: underline;
     }
 
+    .error {
+      margin-top: 12px;
+      color: #d93025;
+      font-size: 14px;
+      display: none;
+    }
+
     .footer {
       margin-top: 24px;
       font-size: 12px;
@@ -101,10 +107,12 @@
       Connecte-toi à ton compte Univerbeta
     </div>
 
-    <input type="email" id="email" placeholder="Adresse e-mail" required>
-    <input type="password" id="password" placeholder="Mot de passe" required>
+    <input type="email" id="email" placeholder="Adresse e-mail">
+    <input type="password" id="password" placeholder="Mot de passe">
 
     <button id="submit">Se connecter</button>
+
+    <div class="error" id="error">Erreur lors de la connexion</div>
 
     <div class="switch" id="toggle">
       Créer un compte Univerbeta
@@ -116,14 +124,19 @@
   </div>
 
 <script>
+  const WORKER_URL = "univerbeta-auth.46zt247y6d.workers.dev";
+
   let mode = "login";
 
   const title = document.getElementById("title");
   const subtitle = document.getElementById("subtitle");
   const submit = document.getElementById("submit");
   const toggle = document.getElementById("toggle");
+  const error = document.getElementById("error");
 
   toggle.onclick = () => {
+    error.style.display = "none";
+
     if (mode === "login") {
       mode = "register";
       title.textContent = "Créer un compte";
@@ -140,7 +153,9 @@
   };
 
   submit.onclick = async () => {
-    const res = await fetch(`/api/${mode}`, {
+    error.style.display = "none";
+
+    const res = await fetch(`${WORKER_URL}/api/${mode}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -150,9 +165,9 @@
     });
 
     if (res.ok) {
-      location.href = "/account";
+      window.location.href = "/account.html";
     } else {
-      alert("Erreur lors de la connexion");
+      error.style.display = "block";
     }
   };
 </script>
