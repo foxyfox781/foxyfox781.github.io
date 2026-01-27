@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Connexion Discord...</title>
+  <title>Connexion Discord - Univerbeta</title>
   <style>
     body {
       margin: 0;
@@ -18,114 +18,81 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 700px;
       padding: 40px 20px;
     }
 
     h1 {
-      font-size: 30px;
+      font-size: 32px;
       margin-bottom: 10px;
     }
 
     p {
       color: #cfcfcf;
       line-height: 1.6;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
-    .btn {
-      padding: 14px 26px;
-      border-radius: 999px;
-      font-weight: 600;
-      text-decoration: none;
-      border: 1px solid #fff;
-      color: #fff;
-      transition: transform 0.15s ease, background 0.15s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,0.1);
+    .status {
+      margin-top: 20px;
+      padding: 16px;
+      border: 1px solid #333;
+      border-radius: 12px;
+      background: #111;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Connexion Discord...</h1>
-    <p id="status">On vérifie tes infos, attends 2 secondes.</p>
-    <a id="btn" class="btn" style="display:none;">Retour au site</a>
+    <h1>Connexion Discord</h1>
+    <p>On vérifie ton compte Discord…</p>
+
+    <div class="status" id="status">
+      Chargement…
+    </div>
   </div>
 
   <script>
-    async function finish() {
+    async function getCode() {
       const params = new URLSearchParams(window.location.search);
-      const code = params.get('code');
+      return params.get("code");
+    }
+
+    async function main() {
+      const code = await getCode();
+      const status = document.getElementById("status");
 
       if (!code) {
-        document.getElementById('status').innerText = "Erreur : aucun code reçu.";
+        status.innerText = "Erreur : aucun code trouvé. Réessaie.";
         return;
       }
 
-      // Envoie le code à ton Worker
-      const res = await fetch("https://TON-DOMAIN.workers.dev/auth/callback", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ code })
-      });
+      try {
+        const res = await fetch("https://TON_WORKER_URL", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ code })
+        });
 
-      const data = await res.json();
+        const data = await res.json();
 
-      if (data.error) {
-        document.getElementById('status').innerText = "Erreur lors de la connexion : " + data.error;
-      } else {
-        document.getElementById('status').innerText =
-          "Connexion réussie ! Ton Discord : " + data.username + "#" + data.discriminator;
+        if (!res.ok) {
+          status.innerText = "Erreur : " + (data.error || "Connexion échouée");
+          return;
+        }
+
+        status.innerHTML = `
+          Connecté !<br>
+          Discord : ${data.username}#${data.discriminator}<br>
+          ID : ${data.id}<br>
+          Email : ${data.email || "Non fourni"}
+        `;
+      } catch (e) {
+        status.innerText = "Erreur réseau. Réessaie.";
       }
-
-      document.getElementById('btn').style.display = "inline-block";
-      document.getElementById('btn').href = "https://univerbeta.com";
     }
-    addEventListener("fetch", event => {
-  event.respondWith(handle(event.request));
-});
 
-async function handle(request) {
-  if (request.method !== "POST") return new Response("Not allowed", { status: 405 });
-
-  const { code } = await request.json();
-
-  const tokenRes = await fetch("https://discord.com/api/oauth2/token", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({
-      client_id: DISCORD_CLIENT_ID,
-      client_secret: DISCORD_CLIENT_SECRET,
-      grant_type: "authorization_code",
-      code,
-      redirect_uri: "https://univerbeta.com/auth/callback",
-      scope: "identify email"
-    })
-  });
-
-  const tokenData = await tokenRes.json();
-  if (tokenData.error) return new Response(JSON.stringify({ error: tokenData.error_description }), { status: 400 });
-
-  const userRes = await fetch("https://discord.com/api/users/@me", {
-    headers: { Authorization: `Bearer ${tokenData.access_token}` }
-  });
-
-  const userData = await userRes.json();
-
-  return new Response(JSON.stringify({
-    username: userData.username,
-    discriminator: userData.discriminator,
-    id: userData.id,
-    email: userData.email
-  }), {
-    headers: { "Content-Type": "application/json" }
-  });
-}
-    finish();
+    main();
   </script>
 </body>
 </html>
