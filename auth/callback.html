@@ -85,7 +85,46 @@
       document.getElementById('btn').style.display = "inline-block";
       document.getElementById('btn').href = "https://univerbeta.com";
     }
+    addEventListener("fetch", event => {
+  event.respondWith(handle(event.request));
+});
 
+async function handle(request) {
+  if (request.method !== "POST") return new Response("Not allowed", { status: 405 });
+
+  const { code } = await request.json();
+
+  const tokenRes = await fetch("https://discord.com/api/oauth2/token", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      client_id: DISCORD_CLIENT_ID,
+      client_secret: DISCORD_CLIENT_SECRET,
+      grant_type: "authorization_code",
+      code,
+      redirect_uri: "https://univerbeta.com/auth/callback",
+      scope: "identify email"
+    })
+  });
+
+  const tokenData = await tokenRes.json();
+  if (tokenData.error) return new Response(JSON.stringify({ error: tokenData.error_description }), { status: 400 });
+
+  const userRes = await fetch("https://discord.com/api/users/@me", {
+    headers: { Authorization: `Bearer ${tokenData.access_token}` }
+  });
+
+  const userData = await userRes.json();
+
+  return new Response(JSON.stringify({
+    username: userData.username,
+    discriminator: userData.discriminator,
+    id: userData.id,
+    email: userData.email
+  }), {
+    headers: { "Content-Type": "application/json" }
+  });
+}
     finish();
   </script>
 </body>
