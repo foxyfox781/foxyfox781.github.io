@@ -1,229 +1,456 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="Créations, projets et communautés par Univerbeta." content="Créations, projets et communautés par Univerbeta.">
-  
-  <!-- EMBED DISCORD / OPEN GRAPH -->
-<meta property="og:title" content="Univerbeta">
-<meta property="og:description" content="Créations, projets et communautés par Univerbeta.">
-<meta property="og:image" content="https://cdn.discordapp.com/attachments/1183530114886139914/1463579810210250896/Univerbeta_-_Bannieres.png?ex=6972586a&is=697106ea&hm=34c6fe3674a7663fc130af54705ff59cd4453805562b2f6e4e8562e9cb06b31f&">
-<meta property="og:url" content="https://univerbeta.com">
-<meta property="og:type" content="website">
-  
-  <!-- Favicon -->
-<link rel="icon" type="image/png" href="https://imagedelivery.net/eSuOzmGvDAcDPsodHpTqgA/61a057d6-73f1-4abc-61b3-b4193b64a200/public">
-<link rel="icon" type="image/png" sizes="32x32" href="https://imagedelivery.net/eSuOzmGvDAcDPsodHpTqgA/51046671-1570-4162-38e7-76ab38b7a000/public">
-<link rel="icon" type="image/png" sizes="192x192" href="https://imagedelivery.net/eSuOzmGvDAcDPsodHpTqgA/51046671-1570-4162-38e7-76ab38b7a000/public">
-  
-  <title>Univerbeta</title>
-  
-  <script>
-  fetch('footer.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('footer-placeholder').innerHTML = html;
-    });
-</script>
-  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="Les communautés Univerbeta : Chill Vibes et Femboy Vibes."
+  >
+
+  <meta property="og:title" content="Univerbeta">
+  <meta
+    property="og:description"
+    content="Des communautés simples, accueillantes et vivantes."
+  >
+  <meta property="og:type" content="website">
+
+  <title>Univerbeta — Des communautés qui vous ressemblent</title>
+
   <style>
+    :root {
+      --bg: #000;
+      --surface: #101010;
+      --line: rgba(255, 255, 255, .12);
+      --text: #f5f5f7;
+      --muted: #a1a1a6;
+      --blue: #2997ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: #fff;
+      background: var(--bg);
+      color: var(--text);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "Segoe UI",
+        Arial,
+        sans-serif;
     }
 
-    /* HEADER */
-    header {
-      height: 70px;
+    a {
+      color: inherit;
+    }
+
+    .nav {
+      height: 52px;
       display: flex;
       align-items: center;
-      padding: 0 30px;
-      border-bottom: 1px solid #000;
+      justify-content: space-between;
+      max-width: 1024px;
+      margin: auto;
+      padding: 0 22px;
     }
 
-    .logo img {
-      height: 40px;
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(0, 0, 0, .8);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
     }
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      border: 1px solid #000;
-      background: #0f0f0f;
-    }
-    
-       /* Truc Apple */
-
-/* HERO */
-    .hero {
-      text-align: center;
-      padding: 80px 20px 40px;
+    .brand {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
     }
 
-    .hero h1 {
-      font-size: 48px;
-      margin: 0;
+    .brand img {
+      width: 27px;
+      height: 27px;
+      object-fit: contain;
     }
 
-    .hero p {
-      margin-top: 12px;
-      font-size: 20px;
-      color: #b5b5b5;
-    }
-
-    .buttons {
-      margin-top: 30px;
+    .menu {
       display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      font-size: 12px;
+      color: #d6d6d6;
     }
 
-    .btn {
-      padding: 12px 22px;
-      border-radius: 999px;
-      font-size: 16px;
+    .menu a {
       text-decoration: none;
-      transition: 0.2s;
+      transition: color .2s;
     }
 
-    .primary {
-      background: #0071e3;
-      color: #fff;
+    .menu a:hover {
+      color: white;
     }
 
-    .primary:hover {
-      background: #0077ed;
+    .join {
+      color: var(--blue) !important;
     }
 
-    .outline {
-      border: 2px solid #0071e3;
-      color: #0071e3;
-      background: transparent;
+    .announcement {
+      padding: 13px 20px;
+      text-align: center;
+      background: #fff;
+      color: #1d1d1f;
+      font-size: 14px;
     }
 
-    .outline:hover {
-      background: #0071e3;
-      color: #fff;
+    .announcement a {
+      color: #06c;
+      text-decoration: none;
     }
 
-    /* IMAGE DE FOND */
-    .background-image {
-      margin-top: 60px;
-      background: url("https://cdn.discordapp.com/attachments/1183530114886139914/1463554866407276649/IMG_1615.png") no-repeat center center;
-      background-size: cover;
-      height: 400px;
-      border-radius: 20px;
+    main {
+      overflow: hidden;
+    }
+
+    .community {
+      min-height: 720px;
+      text-align: center;
+      padding: 92px 24px 0;
       position: relative;
     }
 
-    .background-image::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.4);
-      border-radius: 20px;
-    }
-    
-    .hero-image {
-  width: 100%;
-  max-width: 1000px;
-  margin-top: 40px;
-  border-radius: 20px;
-}
-
-    /* SECTIONS */
-    .sections {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+    .community + .community {
+      border-top: 12px solid #000;
     }
 
-    .section-card {
-      background: #1a1a1a;
-      border-radius: 12px;
-      padding: 20px;
+    .chill {
+      background:
+        radial-gradient(
+          ellipse 60% 55% at 50% 105%,
+          rgba(93, 54, 168, .28),
+          transparent 68%
+        ),
+        radial-gradient(
+          ellipse 45% 38% at 12% 20%,
+          rgba(72, 35, 125, .12),
+          transparent 72%
+        ),
+        linear-gradient(
+          145deg,
+          #050506 0%,
+          #0b0810 52%,
+          #050506 100%
+        );
     }
 
-    .section-card h2 {
-      font-size: 20px;
-      margin-bottom: 10px;
+    .femboy {
+      background:
+        radial-gradient(
+          ellipse 54% 42% at 50% 100%,
+          rgba(224, 75, 182, .22),
+          transparent 70%
+        ),
+        #151015;
     }
 
-    .section-card p {
-      color: #b5b5b5;
-      font-size: 14px;
-      margin-bottom: 12px;
+    .eyebrow {
+      margin: 0 0 12px;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: .01em;
+      color: var(--blue);
     }
 
-    .section-card a {
-      color: #5bb8ff;
+    .femboy .eyebrow {
+      color: #ff78ca;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 6vw, 68px);
+      letter-spacing: -.05em;
+      line-height: 1.05;
+    }
+
+    .tagline {
+      margin: 15px auto 0;
+      max-width: 660px;
+      font-size: clamp(21px, 2.6vw, 29px);
+      line-height: 1.2;
+      letter-spacing: -.03em;
+      color: #e8e8ed;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      margin: 25px 0 48px;
+    }
+
+    .actions a {
+      color: var(--blue);
       text-decoration: none;
+      font-size: 18px;
     }
-</style>
+
+    .femboy .actions a {
+      color: #ff78ca;
+    }
+
+    .actions a::after {
+      content: '  ›';
+      font-size: 23px;
+      line-height: 0;
+    }
+
+    .visual {
+      display: block;
+      width: min(100%, 1120px);
+      height: 380px;
+      object-fit: cover;
+      object-position: center top;
+      margin: auto;
+      border-radius: 26px 26px 0 0;
+      box-shadow: 0 -20px 70px rgba(0, 0, 0, .35);
+    }
+
+    .features {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 96px 24px 110px;
+      text-align: center;
+    }
+
+    .features h2 {
+      margin: 0;
+      font-size: clamp(32px, 4vw, 48px);
+      letter-spacing: -.045em;
+    }
+
+    .features > p {
+      max-width: 530px;
+      margin: 14px auto 47px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.4;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      text-align: left;
+    }
+
+    .card {
+      min-height: 190px;
+      padding: 27px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(
+        135deg,
+        #1c1c1e,
+        #101011
+      );
+    }
+
+    .card strong {
+      font-size: 20px;
+      letter-spacing: -.02em;
+    }
+
+    .card p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.45;
+      font-size: 15px;
+    }
+
+    @media (max-width: 620px) {
+      .nav {
+        padding: 0 16px;
+      }
+
+      .menu {
+        gap: 15px;
+      }
+
+      .announcement {
+        font-size: 13px;
+      }
+
+      .community {
+        min-height: 610px;
+        padding-top: 74px;
+      }
+
+      .visual {
+        height: 280px;
+        border-radius: 18px 18px 0 0;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .features {
+        padding: 70px 20px;
+      }
+
+      .footer-inner {
+        display: block;
+        padding-top: 34px;
+      }
+
+      .social {
+        margin-bottom: 35px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- HEADER -->
-    <header>
-    <a href="index.html" class="logo">
-      <img src="https://imagedelivery.net/eSuOzmGvDAcDPsodHpTqgA/61a057d6-73f1-4abc-61b3-b4193b64a200/public" alt="Univerbeta">
-    </a>
+  <header>
+    <nav class="nav" aria-label="Navigation principale">
+
+      <a
+        class="brand"
+        href="#accueil"
+        aria-label="Univerbeta — accueil"
+      >
+        <img
+          src="https://imagedelivery.net/eSuOzmGvDAcDPsodHpTqgA/61a057d6-73f1-4abc-61b3-b4193b64a200/public"
+          alt="Univerbeta"
+        >
+      </a>
+
+      <div class="menu">
+        <a href="#chill-vibes">Chill Vibes</a>
+        <a href="#femboy-vibes">Femboy Vibes</a>
+        <a href="https://support.univerbeta.com">Assistance</a>
+        <a href="#communautes">À propos</a>
+      </div>
+
+    </nav>
   </header>
 
- <!-- HERO -->
-  <section class="hero">
-    <h1>Chill Vibes</h1>
-    <p> Le serveur chill, tout public, pour discuter, s’amuser et partager.</p>
+  <div class="announcement">
+    Rejoins une communauté faite pour discuter, jouer et partager.
+    <a href="#communautes">Découvrir&nbsp;›</a>
+  </div>
 
-    <div class="buttons">
-      <a href="https://univerbeta.com/discord/chillvibes" class="btn primary">En savoir plus</a>
-     <a href="https://discord.gg/2j958Kxb4Y" class="btn outline">Rejoindre</a>
-    </div>
-    </div>
+  <main id="accueil">
 
-   <img src="https://imagedelivery.net/eSuOzmGvDAcDPsodHpTqgA/035ffd38-4be9-4f49-dc3c-5c215befa600/public" alt="Image de fond" class="hero-image">
-</div>
-  </section>
-  
-   <section class="hero">
-    <h1>Femboy Vibes</h1>
-    <p> un serveur chill et safe pour femboys, trans et allié·e·s.</p>
+    <section class="community chill" id="chill-vibes">
 
-    <div class="buttons">
-      <a href="https://univerbeta.com/discord/femboyvibes" class="btn primary">En savoir plus</a>
-     <a href="https://discord.gg/y7mAHQUdGp" class="btn outline">Rejoindre</a>
-    </div>
-    </div>
+      <p class="eyebrow">UNIVERBETA</p>
 
-   <img src="https://imagedelivery.net/eSuOzmGvDAcDPsodHpTqgA/956a039c-c64a-497b-ad87-6f98024dd600/public" alt="Image de fond" class="hero-image">
-</div>
-  </section>
+      <h1>Chill Vibes</h1>
 
-  <!-- SECTIONS -->
-  <section class="sections">
-    <div class="section-card">
-      <h2>Support</h2>
-      <p>Besoin d’aide ? Problème avec un serveur ou un bot ? On est là.</p>
-      <a href="https://support.univerbeta.com">Support</a>
-    </div>
-  </section>
-  
+      <p class="tagline">
+        Le serveur chill, tout public, pour discuter,
+        s’amuser et partager.
+      </p>
 
-<div id="footer-placeholder"></div>
+      <div class="actions">
+        <a href="chill-vibes.html">En savoir plus</a>
+        <a href="https://discord.gg/2j958Kxb4Y">Rejoindre</a>
+      </div>
 
-</footer>
+      <img
+        class="visual"
+        src="https://imagedelivery.net/eSuOzmGvDAcDPsodHpTqgA/035ffd38-4be9-4f49-dc3c-5c215befa600/public"
+        alt="Illustration de Chill Vibes"
+      >
 
+    </section>
 
-</body>
-</html>
+    <section class="community femboy" id="femboy-vibes">
+
+      <p class="eyebrow">UNIVERBETA</p>
+
+      <h1>Femboy Vibes</h1>
+
+      <p class="tagline">
+        Un espace chill et safe pour les femboys,
+        les personnes trans et leurs allié·e·s.
+      </p>
+
+      <div class="actions">
+        <a href="https://univerbeta.com/discord/femboyvibes">
+          En savoir plus
+        </a>
+
+        <a href="https://discord.gg/y7mAHQUdGp">
+          Rejoindre
+        </a>
+      </div>
+
+      <img
+        class="visual"
+        src="https://imagedelivery.net/eSuOzmGvDAcDPsodHpTqgA/956a039c-c64a-497b-ad87-6f98024dd600/public"
+        alt="Illustration de Femboy Vibes"
+      >
+
+    </section>
+
+    <section class="features" id="communautes">
+
+      <h2>Les membres avant tout.</h2>
+
+      <p>
+        Chez Univerbeta, notre priorité est de faire plaisir
+        à notre communauté et de créer des espaces où chacun
+        se sent bien — pas de courir après l’argent.
+      </p>
+
+      <div class="cards">
+
+        <article class="card">
+          <strong>Discuter</strong>
+          <p>
+            Des salons vivants pour les discussions du quotidien,
+            les découvertes et les fous rires.
+          </p>
+        </article>
+
+        <article class="card">
+          <strong>Partager</strong>
+          <p>
+            Jeux, créations, musiques et passions :
+            il y a toujours quelque chose à montrer.
+          </p>
+        </article>
+
+        <article class="card">
+          <strong>Être soi-même</strong>
+          <p>
+            Une modération présente et une ambiance respectueuse,
+            pour profiter tranquillement.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Le footer sera chargé ici -->
+  <div id="footer-placeholder"></div>
 
 </body>
 </html>
