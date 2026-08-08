@@ -1,36 +1,49 @@
 <style>
-  footer {
-    border-top: 1px solid var(--line);
+  .univerbeta-footer {
+    --footer-line: rgba(255, 255, 255, 0.12);
+    --footer-text: #f5f5f7;
+    --footer-muted: #a1a1a6;
+    --footer-subtle: #6e6e73;
+
+    border-top: 1px solid var(--footer-line);
     background: #0d0d0f;
+    color: var(--footer-text);
   }
 
-  .footer-inner {
+  .univerbeta-footer * {
+    box-sizing: border-box;
+  }
+
+  .univerbeta-footer-inner {
+    width: 100%;
     max-width: 980px;
-    margin: auto;
+    margin: 0 auto;
     padding: 42px 24px 28px;
     display: grid;
-    grid-template-columns: 190px 1fr;
+    grid-template-columns: 190px minmax(0, 1fr);
     gap: 72px;
   }
 
-  .social {
+  /* Réseaux sociaux */
+
+  .univerbeta-footer-social {
     padding-top: 1px;
   }
 
-  .social-title {
+  .univerbeta-footer-social-title {
     display: block;
     margin-bottom: 15px;
-    color: #a1a1a6;
+    color: var(--footer-muted);
     font-size: 13px;
   }
 
-  .social-icons {
+  .univerbeta-footer-social-icons {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
   }
 
-  .social-icons a {
+  .univerbeta-footer-social-icons a {
     width: 38px;
     height: 38px;
     display: grid;
@@ -38,174 +51,203 @@
     border: 1px solid #424245;
     border-radius: 50%;
     color: #d2d2d7;
-    transition: background 0.2s, color 0.2s, transform 0.2s;
+    text-decoration: none;
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease;
   }
 
-  .social-icons a:hover {
+  .univerbeta-footer-social-icons a:hover {
     background: #f5f5f7;
     color: #111;
     transform: translateY(-2px);
   }
 
-  .social-icons svg {
+  .univerbeta-footer-social-icons svg {
     width: 17px;
     height: 17px;
     fill: currentColor;
   }
 
-  .footer-content {
+  /* Contenu */
+
+  .univerbeta-footer-content {
     min-width: 0;
   }
 
-  .footer-links {
+  .univerbeta-footer-links {
     border-top: 1px solid #424245;
   }
 
-  .footer-links details {
+  .univerbeta-footer-links details {
     border-bottom: 1px solid #424245;
   }
 
-  .footer-links summary {
+  .univerbeta-footer-links summary {
     list-style: none;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px 0;
+    color: var(--footer-text);
     font-size: 17px;
     font-weight: 600;
   }
 
-  .footer-links summary::-webkit-details-marker {
+  .univerbeta-footer-links summary::-webkit-details-marker {
     display: none;
   }
 
-  .footer-links summary::after {
+  .univerbeta-footer-links summary::after {
     content: "+";
     color: #d2d2d7;
     font-size: 22px;
     font-weight: 300;
-    transition: transform 0.2s;
+    line-height: 1;
+    transition: transform 0.2s ease;
   }
 
-  .footer-links details[open] summary::after {
+  .univerbeta-footer-links details[open] summary::after {
     transform: rotate(45deg);
   }
 
-  .footer-list {
+  .univerbeta-footer-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px 28px;
     padding: 0 0 20px;
   }
 
-  .footer-list a {
-    text-decoration: none;
+  .univerbeta-footer-list a {
+    color: var(--footer-muted);
     font-size: 14px;
-    color: #a1a1a6;
+    text-decoration: none;
   }
 
-  .footer-list a:hover {
+  .univerbeta-footer-list a:hover {
     color: #fff;
   }
 
-  .locale {
+  /* Localisation */
+
+  .univerbeta-footer-locale {
     margin: 35px 0 30px;
-    color: #a1a1a6;
+    color: var(--footer-muted);
     font-size: 14px;
   }
 
-  .legal {
-    color: #6e6e73;
+  /* Mentions légales */
+
+  .univerbeta-footer-legal {
+    color: var(--footer-subtle);
     font-size: 12px;
     line-height: 1.7;
   }
 
-  .legal p {
+  .univerbeta-footer-legal p {
     margin: 0 0 8px;
   }
 
-  .legal a {
+  .univerbeta-footer-legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+  }
+
+  .univerbeta-footer-legal a {
     color: #8e8e93;
     text-decoration: none;
-    margin-right: 14px;
     white-space: nowrap;
   }
 
-  .legal a:hover {
+  .univerbeta-footer-legal a:hover {
     color: #fff;
     text-decoration: underline;
   }
 
+  /* Mobile */
+
   @media (max-width: 620px) {
-    .nav {
-      padding: 0 16px;
-    }
-
-    .menu {
-      gap: 15px;
-    }
-
-    .announcement {
-      font-size: 13px;
-    }
-
-    .community {
-      min-height: 610px;
-      padding-top: 74px;
-    }
-
-    .visual {
-      height: 280px;
-      border-radius: 18px 18px 0 0;
-    }
-
-    .cards {
-      grid-template-columns: 1fr;
-    }
-
-    .features {
-      padding: 70px 20px;
-    }
-
-    .footer-inner {
+    .univerbeta-footer-inner {
       display: block;
-      padding-top: 34px;
+      padding: 34px 20px 26px;
     }
 
-    .social {
+    .univerbeta-footer-social {
       margin-bottom: 35px;
+    }
+
+    .univerbeta-footer-list {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .univerbeta-footer-links summary {
+      padding: 18px 0;
+      font-size: 16px;
+    }
+
+    .univerbeta-footer-locale {
+      margin: 30px 0 25px;
+    }
+
+    .univerbeta-footer-legal-links {
+      flex-direction: column;
+      gap: 6px;
     }
   }
 </style>
 
-<footer>
-  <div class="footer-inner">
+<footer class="univerbeta-footer">
+  <div class="univerbeta-footer-inner">
 
-    <aside class="social" aria-label="Nos réseaux sociaux">
-      <span class="social-title">Suivez Univerbeta</span>
+    <aside
+      class="univerbeta-footer-social"
+      aria-label="Nos réseaux sociaux"
+    >
+      <span class="univerbeta-footer-social-title">
+        Suivez Univerbeta
+      </span>
 
-      <div class="social-icons">
+      <div class="univerbeta-footer-social-icons">
 
-        <a href="#" aria-label="Discord" title="Discord">
+        <a
+          href="#"
+          aria-label="Discord"
+          title="Discord"
+        >
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M19.5 4.3A16.3 16.3 0 0 0 15.7 3l-.5 1a15.1 15.1 0 0 0-6.4 0l-.5-1c-1.3.3-2.6.7-3.8 1.3C2.1 8 1.4 11.6 1.7 15.2A15.3 15.3 0 0 0 6.4 17.6l1.1-1.5-1.7-.8.4-.3c3.3 1.5 7.1 1.5 10.4 0l.4.3-1.7.8 1.1 1.5a15.3 15.3 0 0 0 4.7-2.4c.4-4.1-.6-7.7-1.6-10.9ZM8.7 13.8c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/>
           </svg>
         </a>
 
-        <a href="#" aria-label="YouTube" title="YouTube">
+        <a
+          href="#"
+          aria-label="YouTube"
+          title="YouTube"
+        >
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/>
           </svg>
         </a>
 
-        <a href="#" aria-label="X" title="X">
+        <a
+          href="#"
+          aria-label="X"
+          title="X"
+        >
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M18.9 2H22l-6.8 7.8 8 10.2H17l-4.9-6.3-5.5 6.3H3.5l7.3-8.4L3.1 2h6.4l4.4 5.7L18.9 2Zm-1.1 16 1.7-.1L8.6 4H6.8l11 14Z"/>
           </svg>
         </a>
 
-        <a href="#" aria-label="Instagram" title="Instagram">
+        <a
+          href="#"
+          aria-label="Instagram"
+          title="Instagram"
+        >
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5ZM17.8 6.3a1.2 1.2 0 1 1-1.2 1.2 1.2 1.2 0 0 1 1.2-1.2Z"/>
           </svg>
@@ -214,13 +256,14 @@
       </div>
     </aside>
 
-    <div class="footer-content">
+    <div class="univerbeta-footer-content">
 
-      <div class="footer-links">
+      <div class="univerbeta-footer-links">
 
         <details>
           <summary>Créations</summary>
-          <div class="footer-list">
+
+          <div class="univerbeta-footer-list">
             <a href="#chill-vibes">Chill Vibes</a>
             <a href="#femboy-vibes">Femboy Vibes</a>
             <a href="#communautes">Nos communautés</a>
@@ -229,7 +272,8 @@
 
         <details>
           <summary>Divertissement</summary>
-          <div class="footer-list">
+
+          <div class="univerbeta-footer-list">
             <a href="#chill-vibes">Discussions &amp; jeux</a>
             <a href="#communautes">Événements</a>
             <a href="#communautes">Partages &amp; créations</a>
@@ -238,7 +282,8 @@
 
         <details>
           <summary>Aide</summary>
-          <div class="footer-list">
+
+          <div class="univerbeta-footer-list">
             <a href="https://support.univerbeta.com">Support</a>
             <a href="mailto:contact@univerbeta.com">Nous contacter</a>
             <a href="#communautes">À propos d’Univerbeta</a>
@@ -247,15 +292,24 @@
 
       </div>
 
-      <div class="locale">🌐&nbsp; France</div>
-
-      <div class="legal">
-        <p>© 2026 Univerbeta. Tous droits réservés.</p>
-        <a href="#">Conditions d’utilisation</a>
-        <a href="#">Politique de confidentialité</a>
-        <a href="#">Mentions légales</a>
-        <a href="#">Informations sur l’entreprise</a>
+      <div class="univerbeta-footer-locale">
+        🌐&nbsp; France
       </div>
+
+      <div class="univerbeta-footer-legal">
+        <p>© 2026 Univerbeta. Tous droits réservés.</p>
+
+        <div class="univerbeta-footer-legal-links">
+          <a href="#">Conditions d’utilisation</a>
+          <a href="#">Politique de confidentialité</a>
+          <a href="#">Mentions légales</a>
+          <a href="#">Informations sur l’entreprise</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</footer>
 
     </div>
   </div>
