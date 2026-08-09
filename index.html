@@ -447,10 +447,37 @@
       </div>
     </section>
 
-  </main>
+    </main>
 
-  <!-- Le footer sera chargé ici -->
-<div id="footer-placeholder"></div>
+  <div id="footer-placeholder"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const footerPlaceholder = document.getElementById("footer-placeholder");
+
+      if (!footerPlaceholder) {
+        console.error("Erreur : #footer-placeholder introuvable.");
+        return;
+      }
+
+      fetch("/footer.html")
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error(
+              "Impossible de charger footer.html : " + response.status
+            );
+          }
+
+          return response.text();
+        })
+        .then(function (html) {
+          footerPlaceholder.innerHTML = html;
+        })
+        .catch(function (error) {
+          console.error("Erreur lors du chargement du footer :", error);
+        });
+    });
+  </script>
 
 </body>
 </html>
