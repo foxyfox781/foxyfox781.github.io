@@ -1,165 +1,520 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Conditions d’Utilisation - Univerbeta</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="Conditions d’utilisation d’Univerbeta."
+  >
+
+  <meta property="og:title" content="Conditions d’utilisation — Univerbeta">
+  <meta
+    property="og:description"
+    content="Consultez les conditions applicables aux services, créations et projets d’Univerbeta."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://univerbeta.com/legal/terms">
+
+  <title>Conditions d’utilisation — Univerbeta</title>
+
   <style>
+    :root {
+      --bg: #000;
+      --surface: #101010;
+      --line: rgba(255, 255, 255, .12);
+      --text: #f5f5f7;
+      --muted: #a1a1a6;
+      --subtle: #6e6e73;
+      --blue: #2997ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: #0f0f0f;
-      color: #fff;
-    }
-
-    header {
-      height: 70px;
-      display: flex;
-      align-items: center;
-      padding: 0 30px;
-      border-bottom: 1px solid #000;
-      background: #0f0f0f;
-    }
-
-    .logo img {
-      height: 40px;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    h1 {
-      font-size: 36px;
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: #fff;
-    }
-
-    .date {
-      color: #888;
-      margin-bottom: 30px;
-    }
-
-    h2 {
-      font-size: 22px;
-      margin-top: 30px;
-      margin-bottom: 10px;
-      border-bottom: 1px solid #000;
-      padding-bottom: 10px;
-      color: #fff;
-    }
-
-    p {
-      color: #d9d9d9;
+      background: var(--bg);
+      color: var(--text);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "Segoe UI",
+        Arial,
+        sans-serif;
       line-height: 1.6;
     }
 
-    ul {
-      margin: 10px 0 20px 20px;
-      color: #d9d9d9;
-    }
-
-    .footer {
-      text-align: center;
-      padding: 30px 0;
-      color: #888;
-      border-top: 1px solid #000;
-    }
-
     a {
+      color: inherit;
+    }
+
+    /* HEADER */
+
+    .nav {
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1024px;
+      margin: auto;
+      padding: 0 22px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(0, 0, 0, .8);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+    }
+
+    .brand img {
+      width: 27px;
+      height: 27px;
+      object-fit: contain;
+    }
+
+    .menu {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      font-size: 12px;
+      color: #d6d6d6;
+    }
+
+    .menu a {
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    .menu a:hover {
       color: #fff;
+    }
+
+    /* PAGE */
+
+    main {
+      padding: 80px 24px 110px;
+    }
+
+    .legal-page {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .legal-header {
+      padding: 0 0 42px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(40px, 6vw, 64px);
+      line-height: 1.02;
+      letter-spacing: -.055em;
+    }
+
+    .intro {
+      max-width: 700px;
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.5;
+    }
+
+    .updated {
+      display: inline-flex;
+      margin-top: 24px;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--subtle);
+      font-size: 13px;
+      background: rgba(255, 255, 255, .025);
+    }
+
+    .legal-content {
+      padding-top: 48px;
+    }
+
+    .legal-section {
+      padding: 34px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .legal-section:first-child {
+      padding-top: 0;
+    }
+
+    .legal-section:last-child {
+      border-bottom: 0;
+    }
+
+    .section-number {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 26px;
+      line-height: 1.2;
+      letter-spacing: -.025em;
+    }
+
+    h3 {
+      margin: 24px 0 8px;
+      font-size: 18px;
+    }
+
+    .legal-section p {
+      max-width: 760px;
+      margin: 14px 0 0;
+      color: #c7c7cc;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .legal-list {
+      max-width: 760px;
+      margin: 16px 0 0;
+      padding-left: 22px;
+      color: #c7c7cc;
+    }
+
+    .legal-list li {
+      margin: 8px 0;
+      padding-left: 4px;
+    }
+
+    .legal-note {
+      margin-top: 20px;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: linear-gradient(135deg, #151515, #0e0e0f);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .legal-note strong {
+      color: var(--text);
+    }
+
+    .contact-link {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .contact-link:hover {
       text-decoration: underline;
+    }
+
+    @media (max-width: 620px) {
+      .nav {
+        padding: 0 16px;
+      }
+
+      .menu {
+        gap: 15px;
+      }
+
+      main {
+        padding: 58px 20px 80px;
+      }
+
+      .legal-header {
+        padding-bottom: 34px;
+      }
+
+      .legal-content {
+        padding-top: 36px;
+      }
+
+      .legal-section {
+        padding: 28px 0;
+      }
+
+      h2 {
+        font-size: 23px;
+      }
+
+      .legal-section p,
+      .legal-list {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <a href="index.html" class="logo">
-      <img src="https://cdn.discordapp.com/attachments/1183530114886139914/1401582227586027591/Mon_projet-1.png" alt="Univerbeta">
-    </a>
-  </header>
 
-  <div class="container">
-    <h1>Conditions d’Utilisation - Univerbeta</h1>
-    <div class="date">Mise à jour : 20 janvier</div>
+  <!-- HEADER -->
+  <div id="header-placeholder"></div>
 
-    <h2>1. Acceptation des Conditions</h2>
-    <p>
-      En utilisant un service, une création, un projet, un bot, un site ou tout autre contenu lié à Univerbeta,
-      vous acceptez automatiquement les présentes Conditions d’Utilisation.
-    </p>
+  <main>
+    <article class="legal-page">
 
-    <h2>2. Champ d’application</h2>
-    <p>
-      Ces Conditions s’appliquent à l’ensemble des créations et services d’Univerbeta, incluant notamment :
-    </p>
-    <ul>
-      <li>Serveurs Discord</li>
-      <li>Bots Discord</li>
-      <li>Sites web</li>
-      <li>Jeux et projets numériques</li>
-      <li>Réseaux sociaux officiels</li>
-      <li>Tout service futur</li>
-    </ul>
+      <header class="legal-header">
+        <p class="eyebrow">Univerbeta · Informations légales</p>
 
-    <h2>3. Utilisation autorisée</h2>
-    <p>L’utilisateur s’engage à adopter un comportement respectueux et légal.</p>
-    <p><strong>Interdictions</strong></p>
-    <ul>
-      <li>Contenu illégal</li>
-      <li>Harcèlement, haine ou discrimination</li>
-      <li>Contenu sexuel explicite</li>
-      <li>Spam, arnaques ou publicités non autorisées</li>
-      <li>Exploitation ou sabotage des services</li>
-      <li>Usurpation d’identité</li>
-      <li>Tout comportement nuisible à Univerbeta</li>
-    </ul>
+        <h1>Conditions d’utilisation</h1>
 
-    <h2>4. Sanctions</h2>
-    <p>Univerbeta se réserve le droit d’appliquer les sanctions suivantes :</p>
-    <ul>
-      <li>Avertissement</li>
-      <li>Suppression de contenu</li>
-      <li>Restriction temporaire</li>
-      <li>Exclusion définitive</li>
-      <li>Bannissement global</li>
-      <li>Signalement aux plateformes ou autorités</li>
-    </ul>
+        <p class="intro">
+          Les présentes conditions définissent les règles applicables
+          à l’utilisation des services, créations et contenus liés
+          à Univerbeta.
+        </p>
 
-    <h2>5. Propriété intellectuelle</h2>
-    <p>
-      L’ensemble des contenus et créations est la propriété exclusive d’Univerbeta. Toute utilisation non autorisée est interdite.
-    </p>
+        <span class="updated">
+          Dernière mise à jour : 20 janvier 2026
+        </span>
+      </header>
 
-    <h2>6. Données personnelles</h2>
-    <p>Univerbeta ne collecte aucune donnée personnelle.</p>
+      <div class="legal-content">
 
-    <h2>7. Limitation de responsabilité</h2>
-    <ul>
-      <li>Bugs, interruptions ou pertes de données</li>
-      <li>Actions des utilisateurs</li>
-      <li>Dommages directs ou indirects</li>
-    </ul>
-    <p>Les services sont fournis tels quels, sans garantie.</p>
+        <section class="legal-section">
+          <span class="section-number">01</span>
+          <h2>Acceptation des Conditions</h2>
 
-    <h2>8. Contact</h2>
-    <p>
-      Pour toute question, plainte ou demande concernant ces Conditions, vous pouvez contacter Univerbeta à :
-      <a href="mailto:support@univerbeta.com">support@univerbeta.com</a> ou via le Discord officiel.
-    </p>
+          <p>
+            En utilisant un service, une création, un projet, un bot,
+            un site ou tout autre contenu lié à Univerbeta, vous acceptez
+            automatiquement les présentes Conditions d’Utilisation.
+          </p>
+        </section>
 
-    <h2>9. Modifications</h2>
-    <p>
-      Univerbeta peut modifier ces conditions à tout moment. L’utilisation continue des services vaut acceptation.
-    </p>
+        <section class="legal-section">
+          <span class="section-number">02</span>
+          <h2>Champ d’application</h2>
 
-    <div class="footer">
-      © 2026 Univerbeta - Tous droits réservés
-    </div>
-  </div>
+          <p>
+            Ces Conditions s’appliquent à l’ensemble des créations
+            et services d’Univerbeta, incluant notamment :
+          </p>
+
+          <ul class="legal-list">
+            <li>Serveurs Discord</li>
+            <li>Bots Discord</li>
+            <li>Sites web</li>
+            <li>Jeux et projets numériques</li>
+            <li>Réseaux sociaux officiels</li>
+            <li>Tout service futur</li>
+          </ul>
+        </section>
+
+        <section class="legal-section">
+          <span class="section-number">03</span>
+          <h2>Utilisation autorisée</h2>
+
+          <p>
+            L’utilisateur s’engage à adopter un comportement respectueux
+            et légal.
+          </p>
+
+          <h3>Interdictions</h3>
+
+          <ul class="legal-list">
+            <li>Contenu illégal</li>
+            <li>Harcèlement, haine ou discrimination</li>
+            <li>Contenu sexuel explicite</li>
+            <li>Spam, arnaques ou publicités non autorisées</li>
+            <li>Exploitation ou sabotage des services</li>
+            <li>Usurpation d’identité</li>
+            <li>Tout comportement nuisible à Univerbeta</li>
+          </ul>
+        </section>
+
+        <section class="legal-section">
+          <span class="section-number">04</span>
+          <h2>Sanctions</h2>
+
+          <p>
+            Univerbeta se réserve le droit d’appliquer les sanctions
+            suivantes :
+          </p>
+
+          <ul class="legal-list">
+            <li>Avertissement</li>
+            <li>Suppression de contenu</li>
+            <li>Restriction temporaire</li>
+            <li>Exclusion définitive</li>
+            <li>Bannissement global</li>
+            <li>Signalement aux plateformes ou autorités</li>
+          </ul>
+        </section>
+
+        <section class="legal-section">
+          <span class="section-number">05</span>
+          <h2>Propriété intellectuelle</h2>
+
+          <p>
+            L’ensemble des contenus et créations est la propriété
+            exclusive d’Univerbeta. Toute utilisation non autorisée
+            est interdite.
+          </p>
+        </section>
+
+        <section class="legal-section">
+          <span class="section-number">06</span>
+          <h2>Données personnelles</h2>
+
+          <p>
+            Univerbeta ne collecte aucune donnée personnelle.
+          </p>
+
+          <div class="legal-note">
+            <strong>À noter :</strong>
+            pour les informations détaillées concernant la confidentialité,
+            consultez également la
+            <a class="contact-link" href="/legal/privacy">
+              Politique de confidentialité
+            </a>.
+          </div>
+        </section>
+
+        <section class="legal-section">
+          <span class="section-number">07</span>
+          <h2>Limitation de responsabilité</h2>
+
+          <p>
+            Les services sont fournis tels quels, sans garantie.
+            Univerbeta ne peut notamment pas être tenue responsable
+            des éléments suivants :
+          </p>
+
+          <ul class="legal-list">
+            <li>Bugs, interruptions ou pertes de données</li>
+            <li>Actions des utilisateurs</li>
+            <li>Dommages directs ou indirects</li>
+          </ul>
+        </section>
+
+        <section class="legal-section">
+          <span class="section-number">08</span>
+          <h2>Contact</h2>
+
+          <p>
+            Pour toute question, plainte ou demande concernant ces
+            Conditions, vous pouvez contacter Univerbeta à :
+            <a
+              class="contact-link"
+              href="mailto:support@univerbeta.com"
+            >
+              support@univerbeta.com
+            </a>
+            ou via le Discord officiel.
+          </p>
+        </section>
+
+        <section class="legal-section">
+          <span class="section-number">09</span>
+          <h2>Modifications</h2>
+
+          <p>
+            Univerbeta peut modifier ces conditions à tout moment.
+            L’utilisation continue des services vaut acceptation
+            des conditions mises à jour.
+          </p>
+        </section>
+
+      </div>
+
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <!-- CHARGEMENT DU HEADER ET DU FOOTER -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const headerPlaceholder =
+        document.getElementById("header-placeholder");
+
+      if (headerPlaceholder) {
+        fetch("/header.html")
+          .then(function (response) {
+            if (!response.ok) {
+              throw new Error(
+                "Impossible de charger header.html : " +
+                response.status
+              );
+            }
+
+            return response.text();
+          })
+          .then(function (html) {
+            headerPlaceholder.innerHTML = html;
+          })
+          .catch(function (error) {
+            console.error(
+              "Erreur lors du chargement du header :",
+              error
+            );
+          });
+      }
+
+      const footerPlaceholder =
+        document.getElementById("footer-placeholder");
+
+      if (footerPlaceholder) {
+        fetch("/footer.html")
+          .then(function (response) {
+            if (!response.ok) {
+              throw new Error(
+                "Impossible de charger footer.html : " +
+                response.status
+              );
+            }
+
+            return response.text();
+          })
+          .then(function (html) {
+            footerPlaceholder.innerHTML = html;
+          })
+          .catch(function (error) {
+            console.error(
+              "Erreur lors du chargement du footer :",
+              error
+            );
+          });
+      }
+
+    });
+  </script>
+
 </body>
 </html>
