@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Mentions légales et ressources juridiques d’Univerbeta.">
+  <meta property="og:title" content="Mentions légales — Univerbeta">
+  <meta property="og:description" content="Obtenir des ressources et des informations juridiques concernant Univerbeta.">
+  <meta property="og:type" content="website">
+
+  <title>Mentions légales — Univerbeta</title>
+
+  <style>
+    :root {
+      --bg:#000;
+      --surface:#101010;
+      --line:rgba(255,255,255,.12);
+      --text:#f5f5f7;
+      --muted:#a1a1a6;
+      --blue:#2997ff;
+    }
+
+    * { box-sizing:border-box; }
+
+    html { scroll-behavior:smooth; }
+
+    body {
+      margin:0;
+      min-height:100vh;
+      background:
+        radial-gradient(ellipse 60% 35% at 50% -10%, rgba(41,151,255,.08), transparent 70%),
+        var(--bg);
+      color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Arial,sans-serif;
+    }
+
+    a { color:inherit; }
+
+    header {
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:rgba(0,0,0,.8);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav {
+      height:52px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      max-width:1024px;
+      margin:auto;
+      padding:0 22px;
+    }
+
+    .brand {
+      width:30px;
+      height:30px;
+      display:grid;
+      place-items:center;
+    }
+
+    .brand img {
+      width:27px;
+      height:27px;
+      object-fit:contain;
+    }
+
+    .menu {
+      display:flex;
+      gap:30px;
+      align-items:center;
+      font-size:12px;
+      color:#d6d6d6;
+    }
+
+    .menu a {
+      text-decoration:none;
+      transition:color .2s;
+    }
+
+    .menu a:hover,
+    .menu .active {
+      color:white;
+    }
+
+    main {
+      width:min(100%,1024px);
+      margin:auto;
+      padding:92px 22px 110px;
+    }
+
+    .hero {
+      margin-bottom:45px;
+    }
+
+    .eyebrow {
+      margin:0 0 12px;
+      font-size:17px;
+      font-weight:600;
+      letter-spacing:.01em;
+      color:var(--blue);
+    }
+
+    h1 {
+      margin:0;
+      font-size:clamp(42px,6vw,68px);
+      letter-spacing:-.055em;
+      line-height:1.05;
+    }
+
+    .intro {
+      max-width:680px;
+      margin:15px 0 0;
+      color:#e8e8ed;
+      font-size:clamp(20px,2.6vw,28px);
+      line-height:1.2;
+      letter-spacing:-.03em;
+    }
+
+    .legal-card {
+      border:1px solid var(--line);
+      border-radius:22px;
+      overflow:hidden;
+      background:linear-gradient(145deg,#181818,#101010);
+      box-shadow:0 20px 70px rgba(0,0,0,.25);
+    }
+
+    .legal-section {
+      padding:30px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .legal-section:last-child {
+      border-bottom:0;
+    }
+
+    .legal-section h2 {
+      margin:0 0 20px;
+      font-size:24px;
+      letter-spacing:-.03em;
+    }
+
+    .legal-section p {
+      margin:0;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:15px;
+    }
+
+    .legal-links {
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+
+    .legal-link {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:19px 20px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.025);
+      text-decoration:none;
+      transition:background .2s,border-color .2s,transform .2s;
+    }
+
+    .legal-link:hover {
+      background:rgba(255,255,255,.06);
+      border-color:var(--line);
+      transform:translateY(-2px);
+    }
+
+    .legal-link strong {
+      font-size:16px;
+    }
+
+    .legal-link span {
+      color:var(--blue);
+      font-size:22px;
+    }
+
+    .info-grid {
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
+    }
+
+    .info {
+      padding:20px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.025);
+    }
+
+    .info-label {
+      display:block;
+      margin-bottom:7px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .info-value {
+      font-size:16px;
+      font-weight:600;
+    }
+
+    .info-value a {
+      color:var(--blue);
+      text-decoration:none;
+    }
+
+    .back {
+      margin-top:35px;
+      text-align:center;
+    }
+
+    .back a {
+      color:var(--blue);
+      text-decoration:none;
+      font-size:17px;
+    }
+
+    .back a::after {
+      content:'  ›';
+      font-size:23px;
+      line-height:0;
+    }
+
+    @media (max-width:620px) {
+      .nav { padding:0 16px; }
+
+      .menu {
+        gap:15px;
+        font-size:11px;
+      }
+
+      main {
+        padding:70px 16px 80px;
+      }
+
+      .legal-section {
+        padding:24px 20px;
+      }
+
+      .legal-links,
+      .info-grid {
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="/" aria-label="Univerbeta — accueil">
+        <img
+          src="https://imagedelivery.net/eSuOzmGvDAcDPsodHpTqgA/61a057d6-73f1-4abc-61b3-b4193b64a200/public"
+          alt="Univerbeta"
+        >
+      </a>
+
+      <div class="menu">
+        <a href="/#chill-vibes">Chill Vibes</a>
+        <a href="/#femboy-vibes">Femboy Vibes</a>
+        <a href="https://support.univerbeta.com">Assistance</a>
+        <a class="active" href="/legal/">À propos</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">UNIVERBETA</p>
+      <h1>Mentions légales</h1>
+      <p class="intro">
+        Obtenir des ressources et des informations juridiques concernant Univerbeta.
+      </p>
+    </section>
+
+    <section class="legal-card">
+
+      <div class="legal-section">
+        <h2>Liens vers documents juridiques</h2>
+
+        <div class="legal-links">
+          <a class="legal-link" href="/legal/terms">
+            <strong>Conditions d’utilisation</strong>
+            <span>›</span>
+          </a>
+
+          <a class="legal-link" href="/legal/privacy">
+            <strong>Politique de confidentialité</strong>
+            <span>›</span>
+          </a>
+
+          <a class="legal-link" href="/legal/resources">
+            <strong>Ressources supplémentaires</strong>
+            <span>›</span>
+          </a>
+
+          <a class="legal-link" href="https://support.univerbeta.com">
+            <strong>Contact support</strong>
+            <span>›</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="legal-section">
+        <h2>Informations générales</h2>
+
+        <div class="info-grid">
+          <div class="info">
+            <span class="info-label">Nom du site</span>
+            <div class="info-value">Univerbeta</div>
+          </div>
+
+          <div class="info">
+            <span class="info-label">Adresse</span>
+            <div class="info-value">
+              <a href="https://univerbeta.com">univerbeta.com</a>
+            </div>
+          </div>
+
+          <div class="info">
+            <span class="info-label">Contact</span>
+            <div class="info-value">
+              <a href="mailto:contact@univerbeta.com">contact@univerbeta.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="legal-section">
+        <h2>Propriété intellectuelle</h2>
+        <p>
+          Tous les contenus (textes, images, logos, designs) présents sur ce site
+          sont la propriété d’Univerbeta ou sont utilisés avec autorisation.
+          Toute reproduction, modification ou distribution sans autorisation est interdite.
+        </p>
+      </div>
+
+    </section>
+
+    <div class="back">
+      <a href="/">Retour à Univerbeta</a>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const footerPlaceholder = document.getElementById("footer-placeholder");
+
+      if (!footerPlaceholder) {
+        console.error("Erreur : #footer-placeholder introuvable.");
+        return;
+      }
+
+      fetch("/footer.html")
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error(
+              "Impossible de charger footer.html : " + response.status
+            );
+          }
+
+          return response.text();
+        })
+        .then(function (html) {
+          footerPlaceholder.innerHTML = html;
+        })
+        .catch(function (error) {
+          console.error("Erreur lors du chargement du footer :", error);
+        });
+    });
+  </script>
+
+</body>
+</html>
