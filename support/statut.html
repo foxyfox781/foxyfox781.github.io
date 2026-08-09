@@ -1,168 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Statut - Univerbeta</title>
-
-   <script>
-fetch('/footer.html')
-  .then(res => res.text())
-  .then(html => {
-    document.getElementById('footer-placeholder').innerHTML = html;
-  });
-</script>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Statut des services — Univerbeta</title>
 <style>
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: #0f0f0f;
-    color: #fff;
-  }
-
-  header {
-    height: 70px;
-    display: flex;
-    align-items: center;
-    padding: 0 30px;
-    border-bottom: 1px solid #000;
-    background: #0f0f0f;
-  }
-
-  .logo img {
-    height: 40px;
-  }
-
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 20px;
-  }
-
-  h1 {
-    font-size: 36px;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-
-  .warning {
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #ffb000;
-    border-radius: 12px;
-    background: #1a1a1a;
-  }
-
-  .warning h2 {
-    margin: 0 0 10px 0;
-    font-size: 20px;
-    color: #fff;
-  }
-
-  .warning p {
-    margin: 0;
-    color: #d9d9d9;
-  }
-
-  .services {
-    margin-top: 30px;
-    border: 1px solid #000;
-    border-radius: 12px;
-    background: #1a1a1a;
-    padding: 20px;
-  }
-
-  .service {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 0;
-    border-bottom: 1px solid #000;
-  }
-
-  .service:last-child {
-    border-bottom: none;
-  }
-
-  .service-name {
-    font-size: 18px;
-    font-weight: 500;
-  }
-
-  .status {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: green;
-  }
-
-  .dot.orange { background: orange; }
-  .dot.red { background: red; }
-
-  .status-text {
-    font-size: 14px;
-    color: #d9d9d9;
-  }
+:root{--bg:#000;--surface:#101010;--line:rgba(255,255,255,.12);--text:#f5f5f7;--muted:#a1a1a6;--blue:#2997ff;--green:#16c60c;--yellow:#ffb000;--red:#ff1f1f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(ellipse 60% 35% at 50% -10%,rgba(41,151,255,.08),transparent 70%),var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Arial,sans-serif}a{color:inherit}
+header{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.8);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{height:52px;display:flex;align-items:center;justify-content:space-between;max-width:1024px;margin:auto;padding:0 22px}.brand{width:30px;height:30px;display:grid;place-items:center}.brand img{width:27px;height:27px;object-fit:contain}
+.menu{display:flex;gap:30px;align-items:center;font-size:12px;color:#d6d6d6}.menu a{text-decoration:none;transition:color .2s}.menu a:hover,.menu .active{color:#fff}
+.announcement{padding:13px 20px;text-align:center;background:#fff;color:#1d1d1f;font-size:14px}.announcement a{color:#06c;text-decoration:none}
+main{width:min(100%,1024px);margin:auto;padding:76px 22px 100px}.eyebrow{margin:0 0 10px;color:var(--blue);font-size:15px;font-weight:600}.hero{margin-bottom:38px}h1{margin:0;font-size:clamp(42px,6vw,64px);line-height:1.05;letter-spacing:-.055em}.intro{max-width:690px;margin:16px 0 0;color:var(--muted);font-size:clamp(18px,2.2vw,22px);line-height:1.4}
+.notice{padding:24px 26px;margin-bottom:28px;border:1px solid rgba(255,176,0,.75);border-radius:18px;background:linear-gradient(135deg,rgba(255,176,0,.09),rgba(255,255,255,.035))}.notice-title{display:flex;align-items:center;gap:10px;margin:0 0 9px;font-size:21px}.notice-title span{font-size:22px}.notice p{margin:0;color:#d2d2d7;font-size:15px;line-height:1.5}
+.status-card{overflow:hidden;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,#181818,#101010);box-shadow:0 20px 70px rgba(0,0,0,.25)}.status-head{padding:22px 26px;border-bottom:1px solid var(--line)}.status-head h2{margin:0;font-size:21px}.services{padding:0 26px}.service{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line)}.service:last-child{border-bottom:0}.service-name{font-size:17px;font-weight:600}.service-status{display:flex;align-items:center;gap:10px;color:#d2d2d7;font-size:14px}.dot{width:10px;height:10px;flex:0 0 10px;border-radius:50%;box-shadow:0 0 12px currentColor}.online .dot{background:var(--green);color:var(--green)}.issue .dot{background:var(--yellow);color:var(--yellow)}.offline .dot{background:var(--red);color:var(--red)}
+.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.summary-card{padding:20px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.025)}.summary-card strong{display:block;font-size:25px}.summary-card span{display:block;margin-top:5px;color:var(--muted);font-size:13px}
+.help{margin-top:48px;text-align:center}.help h2{margin:0;font-size:30px}.help p{max-width:570px;margin:12px auto 20px;color:var(--muted);line-height:1.5}.help a{color:var(--blue);text-decoration:none;font-size:17px}.help a::after{content:' ›';font-size:23px}
+@media(max-width:620px){.nav{padding:0 16px}.menu{gap:15px;font-size:11px}.announcement{font-size:13px}main{padding:60px 16px 80px}.notice{padding:20px}.services{padding:0 20px}.status-head{padding:20px}.service{min-height:68px}.service-name{font-size:15px}.service-status{font-size:13px}.summary{grid-template-columns:1fr}}
 </style>
 </head>
-
 <body>
-  <header>
-    <a href="index.html" class="logo">
-      <img src="https://cdn.discordapp.com/attachments/1183530114886139914/1401582227586027591/Mon_projet-1.png" alt="Univerbeta">
-    </a>
-  </header>
-
-  <div class="container">
-    <h1>Statut des services</h1>
-
-    <div class="warning">
-      <h2>⚠️ Avertissement</h2>
-      <p>Les statuts sont mis à jour manuellement. Si un service est en panne, veuillez vérifier le Discord officiel.</p>
-    </div>
-
-    <div class="services">
-      <div class="service">
-        <div class="service-name">Site Univerbeta</div>
-        <div class="status">
-          <div class="dot orange"></div>
-          <div class="status-text">Problème d'image</div>
-        </div>
-      </div>
-
-      <div class="service">
-        <div class="service-name">Chill Vibes</div>
-        <div class="status">
-          <div class="dot green"></div>
-          <div class="status-text">En ligne</div>
-        </div>
-      </div>
-
-      <div class="service">
-        <div class="service-name">Femboy Vibes</div>
-        <div class="status">
-          <div class="dot green"></div>
-          <div class="status-text">En ligne</div>
-        </div>
-      </div>
-
-      <div class="service">
-        <div class="service-name">Airblyx</div>
-        <div class="status">
-          <div class="dot red"></div>
-          <div class="status-text">Hors ligne</div>
-        </div>
-      </div>
-    </div>
-
-   <div id="footer-placeholder"></div>
-  </div>
+<header><nav class="nav" aria-label="Navigation principale">
+<a class="brand" href="/" aria-label="Univerbeta — accueil"><img src="https://imagedelivery.net/eSuOzmGvDAcDPsodHpTqgA/61a057d6-73f1-4abc-61b3-b4193b64a200/public" alt="Univerbeta"></a>
+<div class="menu"><a href="/#chill-vibes">Chill Vibes</a><a href="/#femboy-vibes">Femboy Vibes</a><a href="https://support.univerbeta.com">Assistance</a><a class="active" href="/#communautes">À propos</a></div>
+</nav></header>
+<main>
+<section class="hero"><p class="eyebrow">UNIVERBETA</p><h1>Statut des services</h1><p class="intro">Retrouvez ici l’état de nos principaux services et communautés. Les statuts sont mis à jour manuellement.</p></section>
+<section class="notice"><h2 class="notice-title"><span>⚠️</span>Avertissement</h2><p>Les statuts sont mis à jour manuellement. Si un service est en panne, veuillez vérifier le Discord officiel.</p></section>
+<section class="status-card" id="services"><div class="status-head"><h2>Services</h2></div><div class="services">
+<div class="service issue"><div class="service-name">Site Univerbeta</div><div class="service-status"><span class="dot"></span>Problème d’image</div></div>
+<div class="service online"><div class="service-name">Chill Vibes</div><div class="service-status"><span class="dot"></span>En ligne</div></div>
+<div class="service online"><div class="service-name">Femboy Vibes</div><div class="service-status"><span class="dot"></span>En ligne</div></div>
+<div class="service offline"><div class="service-name">Airblyx</div><div class="service-status"><span class="dot"></span>Hors ligne</div></div>
+</div></section>
+<div class="summary"><div class="summary-card"><strong>2</strong><span>Services opérationnels</span></div><div class="summary-card"><strong>1</strong><span>Service avec problème</span></div><div class="summary-card"><strong>1</strong><span>Service hors ligne</span></div></div>
+<section class="help"><h2>Un problème avec un service ?</h2><p>Si votre problème n’apparaît pas ici, contactez-nous ou consultez le centre d’assistance.</p><a href="https://support.univerbeta.com">Ouvrir le centre d’assistance</a></section>
+</main>
+<div id="footer-placeholder"></div>
+<script>
+document.addEventListener("DOMContentLoaded",function(){const p=document.getElementById("footer-placeholder");if(!p)return;fetch("/footer.html").then(r=>{if(!r.ok)throw new Error("Impossible de charger footer.html : "+r.status);return r.text()}).then(h=>p.innerHTML=h).catch(e=>console.error(e));});
+</script>
 </body>
 </html>
