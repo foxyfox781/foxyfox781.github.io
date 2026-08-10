@@ -1,0 +1,48 @@
+.nav {
+  height:52px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  max-width:1024px;
+  margin:auto;
+  padding:0 22px;
+}
+
+header {
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(0,0,0,.8);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.brand {
+  width:30px;
+  height:30px;
+  display:grid;
+  place-items:center;
+}
+
+.brand img {
+  width:27px;
+  height:27px;
+  object-fit:contain;
+}
+
+.menu {
+  display:flex;
+  gap:30px;
+  align-items:center;
+  font-size:12px;
+  color:#d6d6d6;
+}
+
+.menu a {
+  text-decoration:none;
+  transition:color .2s;
+}
+
+.menu a:hover {
+  color:white;
+}
