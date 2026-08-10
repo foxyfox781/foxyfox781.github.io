@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Ressources supplémentaires — Univerbeta</title>
+<link rel="stylesheet" href="/style.css">
+
+<style>
+.resources-page{
+  max-width:900px;
+  margin:auto;
+  padding:80px 24px 110px;
+}
+.resources-page h1{
+  font-size:clamp(40px,6vw,64px);
+  letter-spacing:-.05em;
+  margin:0;
+}
+.resources-intro{
+  color:#a1a1a6;
+  font-size:19px;
+  line-height:1.6;
+  max-width:650px;
+  margin-top:20px;
+}
+.resources-section{
+  margin-top:50px;
+  padding-top:35px;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+.resources-section h2{
+  font-size:28px;
+}
+.article-card{
+  background:#101010;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:20px;
+  padding:25px;
+}
+.article-card p{
+  color:#a1a1a6;
+  line-height:1.6;
+}
+.article-button{
+  display:inline-flex;
+  margin-top:15px;
+  padding:10px 18px;
+  border-radius:999px;
+  background:#f5f5f7;
+  color:#111;
+  text-decoration:none;
+  font-weight:600;
+}
+.legal-links a{
+  color:#2997ff;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div id="header-placeholder"></div>
+
+<main class="resources-page">
+
+<h1>Ressources supplémentaires</h1>
+
+<p class="resources-intro">
+Retrouvez ici les ressources et informations complémentaires concernant Univerbeta.
+</p>
+
+<section class="resources-section">
+<h2>Articles</h2>
+
+<div class="article-card">
+<h3>Responsabilité et mise en garde du Salon Selfie</h3>
+
+<p>
+Découvrez les informations importantes concernant l'utilisation du Salon Selfie
+et les recommandations liées au partage de contenu dans la communauté.
+</p>
+
+<a class="article-button" href="#">
+Voir l’article →
+</a>
+
+</div>
+</section>
+
+<section class="resources-section">
+<h2>Documents officiels</h2>
+
+<div class="legal-links">
+<a href="/legal/terms">Conditions d’utilisation</a><br>
+<a href="/legal/privacy">Politique de confidentialité</a>
+</div>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+fetch("/header.html")
+.then(r => r.text())
+.then(html => {
+ document.getElementById("header-placeholder").innerHTML = html;
+});
+
+fetch("/footer.html")
+.then(r => r.text())
+.then(html => {
+ document.getElementById("footer-placeholder").innerHTML = html;
+});
+
+});
+</script>
+
+</body>
+</html>
