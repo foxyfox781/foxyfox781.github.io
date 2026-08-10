@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Univerbeta — Mascotes</title>
+<style>
+body{
+ margin:0;
+ background:#000;
+ color:#f5f5f7;
+ font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Arial,sans-serif
+}
+main{max-width:1100px;margin:auto;padding:80px 24px}
+h1{text-align:center;font-size:64px;letter-spacing:-.05em}
+.intro{text-align:center;color:#a1a1a6;font-size:20px;margin-bottom:60px}
+.mascotes{display:flex;flex-direction:column;gap:22px}
+.card{
+ display:flex;
+ align-items:center;
+ gap:40px;
+ border:1px solid rgba(255,255,255,.12);
+ border-radius:26px;
+ padding:30px;
+ overflow:hidden;
+}
+.aika{background:linear-gradient(135deg,#ff0000,#050505)}
+.yume{background:linear-gradient(135deg,#2997ff,#001b5c)}
+.nyxa{background:linear-gradient(135deg,#2997ff,#ff4fc3)}
+.kitsu{background:linear-gradient(135deg,#ff9d00,#7a2d00)}
+.card img{width:220px;height:220px;object-fit:contain}
+.info h2{font-size:38px;margin:0 0 12px}
+.info p{font-size:18px;line-height:1.5;color:#eee}
+@media(max-width:700px){.card{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<main>
+<h1>Les mascotes Univerbeta</h1>
+<p class="intro">Découvrez les mascotes officielles qui représentent l'univers d'Univerbeta.</p>
+
+<section class="mascotes">
+
+<article class="card aika">
+<img src="images/aika.png" alt="Aika">
+<div class="info"><h2>Aika</h2><p>Mascote principale d'Univerbeta. Elle est la chef de l'univers Univerbeta. Elle ne sourit pas et garde une personnalité froide et mystérieuse.</p></div>
+</article>
+
+<article class="card yume">
+<img src="images/yume.png" alt="Yume">
+<div class="info"><h2>Yume</h2><p>Mascote principale de Chill Vibes. Elle sourit, aime tout le monde et représente l'ambiance chaleureuse de la communauté.</p></div>
+</article>
+
+<article class="card nyxa">
+<img src="images/nyxa.png" alt="Nyxa">
+<div class="info"><h2>Nyxa</h2><p>Mascote principale de Femboy Vibes. Elle représente l'esprit et l'identité de cette communauté.</p></div>
+</article>
+
+<article class="card kitsu">
+<img src="images/kitsu.png" alt="Kitsu">
+<div class="info"><h2>Kitsu</h2><p>Mascote de Femboy Vibes moins présente, visible notamment dans certains fonds de Femboy Vibes.</p></div>
+</article>
+
+</section>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+fetch("/header.html").then(r=>r.text()).then(h=>document.getElementById("header-placeholder").innerHTML=h);
+fetch("/footer.html").then(r=>r.text()).then(h=>document.getElementById("footer-placeholder").innerHTML=h);
+});
+</script>
+
+</body>
+</html>
